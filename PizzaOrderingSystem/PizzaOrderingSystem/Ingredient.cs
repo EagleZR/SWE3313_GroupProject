@@ -23,7 +23,11 @@ namespace PizzaOrderingSystem {
 
 		public int Amount {
 			get { return this.amount; }
-			set { this.amount = value; }
+			set {
+				if ( value >= (int)Enums.IngredientAmount.NONE && value <= (int)Enums.IngredientAmount.EXTRA ) {
+					this.amount = value;
+				}
+			}
 		}
 		#endregion
 
@@ -36,12 +40,22 @@ namespace PizzaOrderingSystem {
 		#endregion
 
 		#region Methods
-		public void IncreaseAmount() {
-            PizzaOrderingSystem.Enums
+		/// <summary>
+		/// Increases the amount of this ingredient, not to exceed Enums.IngredientAmount.EXTRA
+		/// </summary>
+		public void IncreaseAmount () {
+			if ( this.amount <= (int)Enums.IngredientAmount.EXTRA ) {
+				this.amount++;
+			}
 		}
 
-		public void DecreaseAmount() {
-
+		/// <summary>
+		/// Decreases the amount of this ingredient, not to fall below Enums.IngredientAmount.NONE
+		/// </summary>
+		public void DecreaseAmount () {
+			if ( this.amount > (int)Enums.IngredientAmount.NONE ) {
+				this.amount--;
+			}
 		}
 		#endregion
 	}
