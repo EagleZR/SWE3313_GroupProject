@@ -1,4 +1,5 @@
 ﻿using System;
+using PizzaOrderingSystem;
 
 namespace PizzaOrderingSystem {
 	public class Ingredient {
@@ -36,7 +37,7 @@ namespace PizzaOrderingSystem {
 
 		#region Methods
 		public void IncreaseAmount() {
-
+            PizzaOrderingSystem.Enums
 		}
 
 		public void DecreaseAmount() {
