@@ -53,10 +53,20 @@ namespace PizzaOrderingSystem {
 		/// Decreases the amount of this ingredient, not to fall below Enums.IngredientAmount.NONE
 		/// </summary>
 		public void DecreaseAmount () {
-			if ( this.amount > (int)Enums.IngredientAmount.NONE ) {
+			if ( this.amount >= (int)Enums.IngredientAmount.NONE ) {
 				this.amount--;
 			}
 		}
+
+        /// <summary>
+        /// Sets the ingredient amount to the given value if the value does not exceed EXTRA or fall below NONE
+        /// </summary>
+        /// <param name="amount"></param>
+        public void SetAmount(int amount) {
+            if (amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.NONE) {
+                this.amount = amount;
+            }
+        }
 		#endregion
 	}
 }
