@@ -34,5 +34,19 @@ namespace Pizza_Ordering_Application
                 PasswordL.Clear();
             }
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Logged in successfully", "Success!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MainMenuPanel.Visible = true;
+            LoginPanel.Visible = false;
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Registered successfully", "Success!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MainMenuPanel.Visible = true;
+            LoginPanel.Visible = false;
+        }
     }
 }
