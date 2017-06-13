@@ -18,6 +18,7 @@ namespace PizzaOrderingSystem {
 		public string CardNickname {
 			get { return this.cardNickname; }
 			set {
+                //There's a compiler error here. Try to get it fixed as soon as possible.
 				Cards[] cards = owner.Cards;
 				bool validName = true;
 				for (int i = 0; i < cards.Length; i++) {
