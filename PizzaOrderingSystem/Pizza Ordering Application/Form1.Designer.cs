@@ -58,11 +58,42 @@
             this.CartButton = new System.Windows.Forms.Button();
             this.AccountButton = new System.Windows.Forms.Button();
             this.MainMenuPanel = new System.Windows.Forms.Panel();
+            this.ItemCustomizationPanel = new System.Windows.Forms.Panel();
+            this.PizzaSizeLabel = new System.Windows.Forms.Label();
+            this.CrustLabel = new System.Windows.Forms.Label();
+            this.PanCrustRadio = new System.Windows.Forms.RadioButton();
+            this.ThinCrustRadio = new System.Windows.Forms.RadioButton();
+            this.OriginalCrustRadio = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Meats = new System.Windows.Forms.CheckedListBox();
+            this.Cheeses = new System.Windows.Forms.CheckedListBox();
+            this.Vegetables = new System.Windows.Forms.CheckedListBox();
+            this.AddToCartButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.ItemCustomizationTitle = new System.Windows.Forms.Label();
+            this.MeatToppingsAmount = new System.Windows.Forms.GroupBox();
+            this.LessM = new System.Windows.Forms.RadioButton();
+            this.NormalM = new System.Windows.Forms.RadioButton();
+            this.MoreM = new System.Windows.Forms.RadioButton();
+            this.VeggiesToppingsAmount = new System.Windows.Forms.GroupBox();
+            this.MoreV = new System.Windows.Forms.RadioButton();
+            this.NormalV = new System.Windows.Forms.RadioButton();
+            this.LessV = new System.Windows.Forms.RadioButton();
+            this.CheesesAmount = new System.Windows.Forms.GroupBox();
+            this.MoreC = new System.Windows.Forms.RadioButton();
+            this.NormalC = new System.Windows.Forms.RadioButton();
+            this.LessC = new System.Windows.Forms.RadioButton();
             this.LoginPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.RegisterPage.SuspendLayout();
             this.MainMenuPanel.SuspendLayout();
+            this.ItemCustomizationPanel.SuspendLayout();
+            this.MeatToppingsAmount.SuspendLayout();
+            this.VeggiesToppingsAmount.SuspendLayout();
+            this.CheesesAmount.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoginPanel
@@ -295,6 +326,7 @@
             this.OrderSPizza.TabIndex = 6;
             this.OrderSPizza.Text = "Order Now";
             this.OrderSPizza.UseVisualStyleBackColor = true;
+            this.OrderSPizza.Click += new System.EventHandler(this.OrderSPizza_Click);
             // 
             // OrderLPizza
             // 
@@ -304,6 +336,7 @@
             this.OrderLPizza.TabIndex = 7;
             this.OrderLPizza.Text = "Order Now";
             this.OrderLPizza.UseVisualStyleBackColor = true;
+            this.OrderLPizza.Click += new System.EventHandler(this.OrderLPizza_Click);
             // 
             // OrderMPizza
             // 
@@ -313,6 +346,7 @@
             this.OrderMPizza.TabIndex = 8;
             this.OrderMPizza.Text = "Order Now";
             this.OrderMPizza.UseVisualStyleBackColor = true;
+            this.OrderMPizza.Click += new System.EventHandler(this.OrderMPizza_Click);
             // 
             // CartButton
             // 
@@ -334,6 +368,7 @@
             // 
             // MainMenuPanel
             // 
+            this.MainMenuPanel.Controls.Add(this.ItemCustomizationPanel);
             this.MainMenuPanel.Controls.Add(this.AccountButton);
             this.MainMenuPanel.Controls.Add(this.CartButton);
             this.MainMenuPanel.Controls.Add(this.OrderMPizza);
@@ -350,6 +385,340 @@
             this.MainMenuPanel.TabIndex = 2;
             this.MainMenuPanel.Visible = false;
             // 
+            // ItemCustomizationPanel
+            // 
+            this.ItemCustomizationPanel.Controls.Add(this.CheesesAmount);
+            this.ItemCustomizationPanel.Controls.Add(this.VeggiesToppingsAmount);
+            this.ItemCustomizationPanel.Controls.Add(this.MeatToppingsAmount);
+            this.ItemCustomizationPanel.Controls.Add(this.PizzaSizeLabel);
+            this.ItemCustomizationPanel.Controls.Add(this.CrustLabel);
+            this.ItemCustomizationPanel.Controls.Add(this.PanCrustRadio);
+            this.ItemCustomizationPanel.Controls.Add(this.ThinCrustRadio);
+            this.ItemCustomizationPanel.Controls.Add(this.OriginalCrustRadio);
+            this.ItemCustomizationPanel.Controls.Add(this.label5);
+            this.ItemCustomizationPanel.Controls.Add(this.label4);
+            this.ItemCustomizationPanel.Controls.Add(this.label2);
+            this.ItemCustomizationPanel.Controls.Add(this.Meats);
+            this.ItemCustomizationPanel.Controls.Add(this.Cheeses);
+            this.ItemCustomizationPanel.Controls.Add(this.Vegetables);
+            this.ItemCustomizationPanel.Controls.Add(this.AddToCartButton);
+            this.ItemCustomizationPanel.Controls.Add(this.BackButton);
+            this.ItemCustomizationPanel.Controls.Add(this.ItemCustomizationTitle);
+            this.ItemCustomizationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ItemCustomizationPanel.Location = new System.Drawing.Point(0, 0);
+            this.ItemCustomizationPanel.Name = "ItemCustomizationPanel";
+            this.ItemCustomizationPanel.Size = new System.Drawing.Size(539, 643);
+            this.ItemCustomizationPanel.TabIndex = 11;
+            this.ItemCustomizationPanel.Visible = false;
+            // 
+            // PizzaSizeLabel
+            // 
+            this.PizzaSizeLabel.AutoSize = true;
+            this.PizzaSizeLabel.Location = new System.Drawing.Point(223, 67);
+            this.PizzaSizeLabel.Name = "PizzaSizeLabel";
+            this.PizzaSizeLabel.Size = new System.Drawing.Size(55, 13);
+            this.PizzaSizeLabel.TabIndex = 15;
+            this.PizzaSizeLabel.Text = "Pizza Size";
+            // 
+            // CrustLabel
+            // 
+            this.CrustLabel.AutoSize = true;
+            this.CrustLabel.Location = new System.Drawing.Point(222, 517);
+            this.CrustLabel.Name = "CrustLabel";
+            this.CrustLabel.Size = new System.Drawing.Size(36, 13);
+            this.CrustLabel.TabIndex = 14;
+            this.CrustLabel.Text = "Crusts";
+            // 
+            // PanCrustRadio
+            // 
+            this.PanCrustRadio.AutoSize = true;
+            this.PanCrustRadio.Location = new System.Drawing.Point(346, 546);
+            this.PanCrustRadio.Name = "PanCrustRadio";
+            this.PanCrustRadio.Size = new System.Drawing.Size(44, 17);
+            this.PanCrustRadio.TabIndex = 13;
+            this.PanCrustRadio.TabStop = true;
+            this.PanCrustRadio.Text = "Pan";
+            this.PanCrustRadio.UseVisualStyleBackColor = true;
+            // 
+            // ThinCrustRadio
+            // 
+            this.ThinCrustRadio.AutoSize = true;
+            this.ThinCrustRadio.Location = new System.Drawing.Point(225, 546);
+            this.ThinCrustRadio.Name = "ThinCrustRadio";
+            this.ThinCrustRadio.Size = new System.Drawing.Size(46, 17);
+            this.ThinCrustRadio.TabIndex = 12;
+            this.ThinCrustRadio.TabStop = true;
+            this.ThinCrustRadio.Text = "Thin";
+            this.ThinCrustRadio.UseVisualStyleBackColor = true;
+            // 
+            // OriginalCrustRadio
+            // 
+            this.OriginalCrustRadio.AutoSize = true;
+            this.OriginalCrustRadio.Location = new System.Drawing.Point(84, 546);
+            this.OriginalCrustRadio.Name = "OriginalCrustRadio";
+            this.OriginalCrustRadio.Size = new System.Drawing.Size(60, 17);
+            this.OriginalCrustRadio.TabIndex = 11;
+            this.OriginalCrustRadio.TabStop = true;
+            this.OriginalCrustRadio.Text = "Original";
+            this.OriginalCrustRadio.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 379);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Cheeses";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 237);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Vegetables";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Meats";
+            // 
+            // Meats
+            // 
+            this.Meats.CheckOnClick = true;
+            this.Meats.FormattingEnabled = true;
+            this.Meats.Items.AddRange(new object[] {
+            "Pepperoni",
+            "Grilled Chicken",
+            "Beef",
+            "Spicy Italian Sausage",
+            "Bacon",
+            "Sausage",
+            "Anchovies",
+            "Canadian Bacon"});
+            this.Meats.Location = new System.Drawing.Point(33, 115);
+            this.Meats.Name = "Meats";
+            this.Meats.Size = new System.Drawing.Size(378, 94);
+            this.Meats.TabIndex = 6;
+            this.Meats.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Meats_ItemCheck);
+            // 
+            // Cheeses
+            // 
+            this.Cheeses.CheckOnClick = true;
+            this.Cheeses.FormattingEnabled = true;
+            this.Cheeses.Items.AddRange(new object[] {
+            "Extra Cheese",
+            "3-Cheese Blend",
+            "Parmesan Romano",
+            "Cheddar Cheese"});
+            this.Cheeses.Location = new System.Drawing.Point(33, 402);
+            this.Cheeses.Name = "Cheeses";
+            this.Cheeses.Size = new System.Drawing.Size(378, 94);
+            this.Cheeses.TabIndex = 4;
+            this.Cheeses.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Cheeses_ItemCheck);
+            // 
+            // Vegetables
+            // 
+            this.Vegetables.CheckOnClick = true;
+            this.Vegetables.FormattingEnabled = true;
+            this.Vegetables.Items.AddRange(new object[] {
+            "Pickles",
+            "Green Peppers",
+            "Mushrooms",
+            "Roma Tomatoes",
+            "Pineapple",
+            "Onions",
+            "Black Olives",
+            "Jalapeno Peppers",
+            "Banana Peppers"});
+            this.Vegetables.Location = new System.Drawing.Point(33, 262);
+            this.Vegetables.Name = "Vegetables";
+            this.Vegetables.Size = new System.Drawing.Size(378, 94);
+            this.Vegetables.TabIndex = 3;
+            this.Vegetables.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Vegetables_ItemCheck);
+            // 
+            // AddToCartButton
+            // 
+            this.AddToCartButton.Location = new System.Drawing.Point(364, 32);
+            this.AddToCartButton.Name = "AddToCartButton";
+            this.AddToCartButton.Size = new System.Drawing.Size(75, 23);
+            this.AddToCartButton.TabIndex = 2;
+            this.AddToCartButton.Text = "Add To Cart";
+            this.AddToCartButton.UseVisualStyleBackColor = true;
+            this.AddToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(61, 32);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.TabIndex = 1;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // ItemCustomizationTitle
+            // 
+            this.ItemCustomizationTitle.AutoSize = true;
+            this.ItemCustomizationTitle.Location = new System.Drawing.Point(206, 37);
+            this.ItemCustomizationTitle.Name = "ItemCustomizationTitle";
+            this.ItemCustomizationTitle.Size = new System.Drawing.Size(95, 13);
+            this.ItemCustomizationTitle.TabIndex = 0;
+            this.ItemCustomizationTitle.Text = "Item Customization";
+            // 
+            // MeatToppingsAmount
+            // 
+            this.MeatToppingsAmount.Controls.Add(this.MoreM);
+            this.MeatToppingsAmount.Controls.Add(this.NormalM);
+            this.MeatToppingsAmount.Controls.Add(this.LessM);
+            this.MeatToppingsAmount.Location = new System.Drawing.Point(417, 102);
+            this.MeatToppingsAmount.Name = "MeatToppingsAmount";
+            this.MeatToppingsAmount.Size = new System.Drawing.Size(106, 107);
+            this.MeatToppingsAmount.TabIndex = 22;
+            this.MeatToppingsAmount.TabStop = false;
+            this.MeatToppingsAmount.Text = "ToppingsAmount";
+            this.MeatToppingsAmount.Visible = false;
+            // 
+            // LessM
+            // 
+            this.LessM.AutoSize = true;
+            this.LessM.Location = new System.Drawing.Point(2, 30);
+            this.LessM.Name = "LessM";
+            this.LessM.Size = new System.Drawing.Size(47, 17);
+            this.LessM.TabIndex = 0;
+            this.LessM.TabStop = true;
+            this.LessM.Text = "Less";
+            this.LessM.UseVisualStyleBackColor = true;
+            this.LessM.Click += new System.EventHandler(this.LessM_Click);
+            // 
+            // NormalM
+            // 
+            this.NormalM.AutoSize = true;
+            this.NormalM.Location = new System.Drawing.Point(2, 51);
+            this.NormalM.Name = "NormalM";
+            this.NormalM.Size = new System.Drawing.Size(58, 17);
+            this.NormalM.TabIndex = 1;
+            this.NormalM.TabStop = true;
+            this.NormalM.Text = "Normal";
+            this.NormalM.UseVisualStyleBackColor = true;
+            this.NormalM.Click += new System.EventHandler(this.NormalM_Click);
+            // 
+            // MoreM
+            // 
+            this.MoreM.AutoSize = true;
+            this.MoreM.Location = new System.Drawing.Point(2, 74);
+            this.MoreM.Name = "MoreM";
+            this.MoreM.Size = new System.Drawing.Size(49, 17);
+            this.MoreM.TabIndex = 2;
+            this.MoreM.TabStop = true;
+            this.MoreM.Text = "More";
+            this.MoreM.UseVisualStyleBackColor = true;
+            this.MoreM.Click += new System.EventHandler(this.MoreM_Click);
+            // 
+            // VeggiesToppingsAmount
+            // 
+            this.VeggiesToppingsAmount.Controls.Add(this.MoreV);
+            this.VeggiesToppingsAmount.Controls.Add(this.NormalV);
+            this.VeggiesToppingsAmount.Controls.Add(this.LessV);
+            this.VeggiesToppingsAmount.Location = new System.Drawing.Point(417, 249);
+            this.VeggiesToppingsAmount.Name = "VeggiesToppingsAmount";
+            this.VeggiesToppingsAmount.Size = new System.Drawing.Size(106, 107);
+            this.VeggiesToppingsAmount.TabIndex = 23;
+            this.VeggiesToppingsAmount.TabStop = false;
+            this.VeggiesToppingsAmount.Text = "ToppingsAmount";
+            this.VeggiesToppingsAmount.Visible = false;
+            // 
+            // MoreV
+            // 
+            this.MoreV.AutoSize = true;
+            this.MoreV.Location = new System.Drawing.Point(2, 74);
+            this.MoreV.Name = "MoreV";
+            this.MoreV.Size = new System.Drawing.Size(49, 17);
+            this.MoreV.TabIndex = 2;
+            this.MoreV.TabStop = true;
+            this.MoreV.Text = "More";
+            this.MoreV.UseVisualStyleBackColor = true;
+            this.MoreV.Click += new System.EventHandler(this.MoreV_Click);
+            // 
+            // NormalV
+            // 
+            this.NormalV.AutoSize = true;
+            this.NormalV.Location = new System.Drawing.Point(2, 51);
+            this.NormalV.Name = "NormalV";
+            this.NormalV.Size = new System.Drawing.Size(58, 17);
+            this.NormalV.TabIndex = 1;
+            this.NormalV.TabStop = true;
+            this.NormalV.Text = "Normal";
+            this.NormalV.UseVisualStyleBackColor = true;
+            this.NormalV.Click += new System.EventHandler(this.NormalV_Click);
+            // 
+            // LessV
+            // 
+            this.LessV.AutoSize = true;
+            this.LessV.Location = new System.Drawing.Point(2, 30);
+            this.LessV.Name = "LessV";
+            this.LessV.Size = new System.Drawing.Size(47, 17);
+            this.LessV.TabIndex = 0;
+            this.LessV.TabStop = true;
+            this.LessV.Text = "Less";
+            this.LessV.UseVisualStyleBackColor = true;
+            this.LessV.Click += new System.EventHandler(this.LessV_Click);
+            // 
+            // CheesesAmount
+            // 
+            this.CheesesAmount.Controls.Add(this.MoreC);
+            this.CheesesAmount.Controls.Add(this.NormalC);
+            this.CheesesAmount.Controls.Add(this.LessC);
+            this.CheesesAmount.Location = new System.Drawing.Point(417, 389);
+            this.CheesesAmount.Name = "CheesesAmount";
+            this.CheesesAmount.Size = new System.Drawing.Size(106, 107);
+            this.CheesesAmount.TabIndex = 23;
+            this.CheesesAmount.TabStop = false;
+            this.CheesesAmount.Text = "ToppingsAmount";
+            this.CheesesAmount.Visible = false;
+            // 
+            // MoreC
+            // 
+            this.MoreC.AutoSize = true;
+            this.MoreC.Location = new System.Drawing.Point(2, 74);
+            this.MoreC.Name = "MoreC";
+            this.MoreC.Size = new System.Drawing.Size(49, 17);
+            this.MoreC.TabIndex = 2;
+            this.MoreC.TabStop = true;
+            this.MoreC.Text = "More";
+            this.MoreC.UseVisualStyleBackColor = true;
+            this.MoreC.Click += new System.EventHandler(this.MoreC_Click);
+            // 
+            // NormalC
+            // 
+            this.NormalC.AutoSize = true;
+            this.NormalC.Location = new System.Drawing.Point(2, 51);
+            this.NormalC.Name = "NormalC";
+            this.NormalC.Size = new System.Drawing.Size(58, 17);
+            this.NormalC.TabIndex = 1;
+            this.NormalC.TabStop = true;
+            this.NormalC.Text = "Normal";
+            this.NormalC.UseVisualStyleBackColor = true;
+            this.NormalC.Click += new System.EventHandler(this.NormalC_Click);
+            // 
+            // LessC
+            // 
+            this.LessC.AutoSize = true;
+            this.LessC.Location = new System.Drawing.Point(2, 30);
+            this.LessC.Name = "LessC";
+            this.LessC.Size = new System.Drawing.Size(47, 17);
+            this.LessC.TabIndex = 0;
+            this.LessC.TabStop = true;
+            this.LessC.Text = "Less";
+            this.LessC.UseVisualStyleBackColor = true;
+            this.LessC.Click += new System.EventHandler(this.LessC_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,7 +727,7 @@
             this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.LoginPanel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Pizza Ordering Application";
             this.LoginPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.LoginPage.ResumeLayout(false);
@@ -367,6 +736,14 @@
             this.RegisterPage.PerformLayout();
             this.MainMenuPanel.ResumeLayout(false);
             this.MainMenuPanel.PerformLayout();
+            this.ItemCustomizationPanel.ResumeLayout(false);
+            this.ItemCustomizationPanel.PerformLayout();
+            this.MeatToppingsAmount.ResumeLayout(false);
+            this.MeatToppingsAmount.PerformLayout();
+            this.VeggiesToppingsAmount.ResumeLayout(false);
+            this.VeggiesToppingsAmount.PerformLayout();
+            this.CheesesAmount.ResumeLayout(false);
+            this.CheesesAmount.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +780,33 @@
         private System.Windows.Forms.Label LPizzaLabel;
         private System.Windows.Forms.Label SPizzaLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel ItemCustomizationPanel;
+        private System.Windows.Forms.Label CrustLabel;
+        private System.Windows.Forms.RadioButton PanCrustRadio;
+        private System.Windows.Forms.RadioButton ThinCrustRadio;
+        private System.Windows.Forms.RadioButton OriginalCrustRadio;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckedListBox Meats;
+        private System.Windows.Forms.CheckedListBox Cheeses;
+        private System.Windows.Forms.CheckedListBox Vegetables;
+        private System.Windows.Forms.Button AddToCartButton;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Label ItemCustomizationTitle;
+        private System.Windows.Forms.Label PizzaSizeLabel;
+        private System.Windows.Forms.GroupBox MeatToppingsAmount;
+        private System.Windows.Forms.GroupBox CheesesAmount;
+        private System.Windows.Forms.RadioButton MoreC;
+        private System.Windows.Forms.RadioButton NormalC;
+        private System.Windows.Forms.RadioButton LessC;
+        private System.Windows.Forms.GroupBox VeggiesToppingsAmount;
+        private System.Windows.Forms.RadioButton MoreV;
+        private System.Windows.Forms.RadioButton NormalV;
+        private System.Windows.Forms.RadioButton LessV;
+        private System.Windows.Forms.RadioButton MoreM;
+        private System.Windows.Forms.RadioButton NormalM;
+        private System.Windows.Forms.RadioButton LessM;
     }
 }
 
