@@ -1,6 +1,9 @@
 ﻿using System;
 
 namespace PizzaOrderingSystem {
+	/// <summary>
+	/// A class for storing customer information in the <see cref="PizzaOrderingSystem"/>, including the associated <see cref="PizzaOrderingSystem.Order"/>s and <see cref="PizzaOrderingSystem.Card"/>s.
+	/// </summary>
 	public class Customer {
 
 		#region Private Variables
@@ -37,16 +40,28 @@ namespace PizzaOrderingSystem {
 		#endregion
 
 		#region Constructors
-		public Customer () {
-			this.Name = "";
-			this.Address = "";
-			this.PhoneNumber = "";
-		}
-
-		public Customer ( string name, string address, string phoneNumber, Order[] pastOrders, Card[] cards ) {
+		/// <summary>
+		/// Use this when creating a new <see cref="PizzaOrderingSystem.Customer"/>.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="address"></param>
+		/// <param name="phoneNumber"></param>
+		public Customer ( string name, string address, string phoneNumber ) { 
+			// TODO Do we even need this, or should we create a new customer in the database, then load back into here?
 			this.Name = name;
 			this.Address = address;
 			this.PhoneNumber = phoneNumber;
+		}
+
+		/// <summary>
+		/// Use this when loading a <see cref="PizzaOrderingSystem.Customer"/> from the database.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="address"></param>
+		/// <param name="phoneNumber"></param>
+		/// <param name="pastOrders"></param>
+		/// <param name="cards"></param>
+		public Customer ( string name, string address, string phoneNumber, Order[] pastOrders, Card[] cards ) : this( name, address, phoneNumber ) {
 			this.pastOrders = pastOrders;
 			this.cards = cards;
 		}
@@ -54,9 +69,9 @@ namespace PizzaOrderingSystem {
 
 		#region Methods
 		/// <summary>
-		/// Adds a new Order to the list of previous Orders.
+		/// Adds a new <see cref"PizzaOrderingSystem.Order"/> to the list of previous Orders.
 		/// </summary>
-		/// <param name="order">The new Order to be added.</param>
+		/// <param name="order">The new <see cref"PizzaOrderingSystem.Order"/> to be added.</param>
 		public void AddOrder ( Order order ) {
 			Order[] tempOrders = pastOrders;
 			pastOrders = new Order[tempOrders.Length + 1];
@@ -65,10 +80,11 @@ namespace PizzaOrderingSystem {
 			}
 			pastOrders[pastOrders.Length - 1] = order;
 		}
+
 		/// <summary>
-		/// Adds a new Card to the list of available Cards.
+		/// Adds a new <see cref"PizzaOrderingSystem.Card"/> to the list of available Cards.
 		/// </summary>
-		/// <param name="card">The new Card to be added.</param>
+		/// <param name="card">The new <see cref"PizzaOrderingSystem.Card"/> to be added.</param>
 		public void AddCard ( Card card ) {
 			Card[] tempCards = cards;
 			cards = new Card[tempCards.Length + 1];
@@ -77,10 +93,11 @@ namespace PizzaOrderingSystem {
 			}
 			cards[cards.Length - 1] = card;
 		}
+
 		/// <summary>
-		/// Removes the specified Card from the list of available Cards.
+		/// Removes the specified <see cref"PizzaOrderingSystem.Card"/> from the list of available Cards.
 		/// </summary>
-		/// <param name="card">The Card to be removed.</param>
+		/// <param name="card">The <see cref"PizzaOrderingSystem.Card"/> to be removed.</param>
 		public void RemoveCard ( Card card ) {
 			Card[] newCards = new Card[cards.Length - 1];
 			bool isRemoved = false;

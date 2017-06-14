@@ -1,6 +1,9 @@
 ﻿using System;
 
 namespace PizzaOrderingSystem {
+	/// <summary>
+	/// A class for storing information about a <see cref="PizzaOrderingSystem.Customer"/>'s credit card.
+	/// </summary>
 	public class Card {
 
 		#region Private Variables
