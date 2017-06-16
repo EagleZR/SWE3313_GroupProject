@@ -52,9 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pizza Ordering Application Classes\Enums.cs" />
-    <Compile Include="Pizza Ordering Application Classes\Ingredient.cs" />
-    <Compile Include="Pizza Ordering Application Classes\MenuItem.cs" />
+    <Compile Include="PizzaOrderingSystem\Card.cs" />
+    <Compile Include="PizzaOrderingSystem\Customer.cs" />
+    <Compile Include="PizzaOrderingSystem\Enums.cs" />
+    <Compile Include="PizzaOrderingSystem\Ingredient.cs" />
+    <Compile Include="PizzaOrderingSystem\Pizza.cs" />
+    <Compile Include="PizzaOrderingSystem\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

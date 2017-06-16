@@ -4,7 +4,7 @@ namespace PizzaOrderingSystem {
     public class Pizza {
         #region Private Variables
         private int pizzaSize;
-        private Ingredient[] ingredients = new Ingredient[100];
+        private Ingredient[] ingredients;
         #endregion
 
         #region Properties
@@ -36,36 +36,6 @@ namespace PizzaOrderingSystem {
         public void RemoveIngredient(Ingredient ingredient) {
 
         }
-
-        //I need help here. Seriously.
-        public override string ToString()
-        {
-            string size = "";
-            string[] iName = new string[100];
-
-            if (pizzaSize == 0)
-            {
-                size = "Small Pizza: ";
-            }
-
-            else if (pizzaSize == 1)
-            {
-                size = "Medium Pizza: ";
-            }
-
-            else if (pizzaSize == 2)
-            {
-                size = "Large Pizza: ";
-            }
-
-            for (int i = 0; i <= ingredients.Length; i++)
-            {
-                iName[i] = ingredients[i].name;
-            }
-
-            return size + string.Join(", ", iName);
-        }
-
         #endregion
     }
 }

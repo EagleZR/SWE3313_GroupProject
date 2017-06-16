@@ -1,6 +1,9 @@
 ﻿using System;
 
 namespace PizzaOrderingSystem {
+	/// <summary>
+	/// A class for storing information about a <see cref="PizzaOrderingSystem.Customer"/>'s credit card.
+	/// </summary>
 	public class Card {
 
 		#region Private Variables
@@ -19,7 +22,7 @@ namespace PizzaOrderingSystem {
 			get { return this.cardNickname; }
 			set {
                 //There's a compiler error here. Try to get it fixed as soon as possible.
-				Cards[] cards = owner.Cards;
+				Card[] cards = owner.Cards;
 				bool validName = true;
 				for (int i = 0; i < cards.Length; i++) {
 					if (value.Equals(cards[i].CardNickname)) {
