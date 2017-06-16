@@ -22,6 +22,19 @@ namespace PizzaOrderingSystem {
 		#endregion
 
 		#region Constructors
+		/// <summary>
+		/// Use this if you're creating a pizza with no toppings.
+		/// </summary>
+		/// <param name="pizzaSize"></param>
+		public Pizza(int pizzaSize) {
+			this.PizzaSize = pizzaSize;
+		}
+
+		/// <summary>
+		/// Use this if you're rebuilding a pizza, or you're starting a pizza with default toppings.
+		/// </summary>
+		/// <param name="pizzaSize"></param>
+		/// <param name="ingredients"></param>
 		public Pizza(int pizzaSize, Ingredient[] ingredients) {
 			this.PizzaSize = pizzaSize;
 			this.ingredients = ingredients;
@@ -44,8 +57,10 @@ namespace PizzaOrderingSystem {
 		public string PrintIngredients() {
 			string returnValue = "";
 
-			for (int i = 0; i < ingredients.Length; i++) {
-				returnValue += ingredients[i].Name + ", ";
+			if (ingredients != null) {
+				for (int i = 0; i < ingredients.Length; i++) {
+					returnValue += ingredients[i].Name + ", ";
+				}
 			}
 
 			return returnValue;
