@@ -5,7 +5,7 @@ namespace PizzaOrderingSystem {
 
 		#region Private Variables
 		private Customer purchaser;
-		private MenuItem[] items;
+		private Pizza[] items;
 		private int paymentType;
 		private Card paymentCard;
 		private int orderStatus = (int)Enums.OrderStatus.PENDING;
@@ -20,7 +20,7 @@ namespace PizzaOrderingSystem {
 				}
 			}
 		}
-		public MenuItem[] Items {
+		public Pizza[] Items {
 			get { return this.items; }
 		}
 		public int PaymentType {
@@ -72,7 +72,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="purchaser"></param>
 		/// <param name="items"></param>
 		/// <param name="paymentType"></param>
-		public Order ( Customer purchaser, MenuItem[] items, int paymentType ) : this( purchaser ) {
+		public Order ( Customer purchaser, Pizza[] items, int paymentType ) : this( purchaser ) {
 			this.items = items;
 			this.paymentType = paymentType;
 		}
@@ -84,7 +84,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="items"></param>
 		/// <param name="paymentType"></param>
 		/// <param name="card"></param>
-		public Order ( Customer purchaser, MenuItem[] items, int paymentType, Card card ) : this( purchaser, items, paymentType ) {
+		public Order ( Customer purchaser, Pizza[] items, int paymentType, Card card ) : this( purchaser, items, paymentType ) {
 			this.PaymentCard = card;
 		}
 
@@ -96,16 +96,16 @@ namespace PizzaOrderingSystem {
 		/// <param name="paymentType"></param>
 		/// <param name="card"></param>
 		/// <param name="orderStatus"></param>
-		public Order ( Customer purchaser, MenuItem[] items, int paymentType, Card card, int orderStatus ) : this( purchaser, items, paymentType ) {
+		public Order ( Customer purchaser, Pizza[] items, int paymentType, Card card, int orderStatus ) : this( purchaser, items, paymentType ) {
 			this.orderStatus = orderStatus;
 		}
 		#endregion
 
 		#region Methods
-		public void AddItem ( MenuItem item ) {
+		public void AddItem ( Pizza item ) {
 			if (this.OrderStatus == (int)Enums.OrderStatus.PENDING) {
-				MenuItem[] tempItems = items;
-				items = new MenuItem[tempItems.Length + 1];
+				Pizza[] tempItems = items;
+				items = new Pizza[tempItems.Length + 1];
 				for (int i = 0; i < tempItems.Length; i++) {
 					items[i] = tempItems[i];
 				}

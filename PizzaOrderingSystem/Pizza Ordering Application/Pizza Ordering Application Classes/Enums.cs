@@ -5,7 +5,7 @@
 namespace PizzaOrderingSystem {
 	public class Enums {
 
-		public enum IngredientAmount { NONE, LIGHT, NORMAL, EXTRA };
+		public enum IngredientAmount { LIGHT, NORMAL, EXTRA };
 		public enum IngredientCategory { SAUCE, CHEESE, MEAT, VEGETABLE };
 		public enum PizzaSize { SMALL, MEDIUM, LARGE };
 		public enum OrderStatus { PENDING, SUBMITTED, COMPLETED, CANCELLED };

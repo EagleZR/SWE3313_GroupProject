@@ -5,7 +5,7 @@ namespace PizzaOrderingSystem {
 	public class Ingredient {
 
 		#region Private Variables
-		private string name;
+		public string name;
 		private int category;
 		private int amount;
 		#endregion
@@ -24,7 +24,7 @@ namespace PizzaOrderingSystem {
 		public int Amount {
 			get { return this.amount; }
 			set {
-				if ( value >= (int)Enums.IngredientAmount.NONE && value <= (int)Enums.IngredientAmount.EXTRA ) {
+				if ( value >= (int)Enums.IngredientAmount.LIGHT && value <= (int)Enums.IngredientAmount.EXTRA ) {
 					this.amount = value;
 				}
 			}
@@ -53,7 +53,7 @@ namespace PizzaOrderingSystem {
 		/// Decreases the amount of this ingredient, not to fall below Enums.IngredientAmount.NONE
 		/// </summary>
 		public void DecreaseAmount () {
-			if ( this.amount >= (int)Enums.IngredientAmount.NONE ) {
+			if ( this.amount >= (int)Enums.IngredientAmount.LIGHT ) {
 				this.amount--;
 			}
 		}
@@ -63,7 +63,7 @@ namespace PizzaOrderingSystem {
         /// </summary>
         /// <param name="amount"></param>
         public void SetAmount(int amount) {
-            if (amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.NONE) {
+            if (amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.LIGHT) {
                 this.amount = amount;
             }
         }
