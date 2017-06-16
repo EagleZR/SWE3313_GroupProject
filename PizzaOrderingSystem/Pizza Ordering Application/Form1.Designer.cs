@@ -71,7 +71,7 @@
             this.ExpirationDateLabel = new System.Windows.Forms.Label();
             this.CardNumberLabel = new System.Windows.Forms.Label();
             this.CardNameLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CheckoutButton = new System.Windows.Forms.Button();
             this.BackButtonC = new System.Windows.Forms.Button();
             this.PaymentMethod = new System.Windows.Forms.ComboBox();
             this.PaymentLabel = new System.Windows.Forms.Label();
@@ -430,7 +430,7 @@
             // AddToCartPanel
             // 
             this.AddToCartPanel.Controls.Add(this.CreditCardInfo);
-            this.AddToCartPanel.Controls.Add(this.button2);
+            this.AddToCartPanel.Controls.Add(this.CheckoutButton);
             this.AddToCartPanel.Controls.Add(this.BackButtonC);
             this.AddToCartPanel.Controls.Add(this.PaymentMethod);
             this.AddToCartPanel.Controls.Add(this.PaymentLabel);
@@ -549,14 +549,14 @@
             this.CardNameLabel.TabIndex = 0;
             this.CardNameLabel.Text = "Name On Card:";
             // 
-            // button2
+            // CheckoutButton
             // 
-            this.button2.Location = new System.Drawing.Point(454, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Checkout";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CheckoutButton.Location = new System.Drawing.Point(454, 8);
+            this.CheckoutButton.Name = "CheckoutButton";
+            this.CheckoutButton.Size = new System.Drawing.Size(69, 23);
+            this.CheckoutButton.TabIndex = 7;
+            this.CheckoutButton.Text = "Checkout";
+            this.CheckoutButton.UseVisualStyleBackColor = true;
             // 
             // BackButtonC
             // 
@@ -981,7 +981,7 @@
         private System.Windows.Forms.RadioButton NormalM;
         private System.Windows.Forms.RadioButton LessM;
         private System.Windows.Forms.Panel AddToCartPanel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CheckoutButton;
         private System.Windows.Forms.Button BackButtonC;
         private System.Windows.Forms.ComboBox PaymentMethod;
         private System.Windows.Forms.Label PaymentLabel;
