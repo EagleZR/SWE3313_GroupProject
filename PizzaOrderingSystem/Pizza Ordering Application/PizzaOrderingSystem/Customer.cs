@@ -100,14 +100,11 @@ namespace PizzaOrderingSystem {
 		/// <param name="card">The <see cref"PizzaOrderingSystem.Card"/> to be removed.</param>
 		public void RemoveCard ( Card card ) {
 			Card[] newCards = new Card[cards.Length - 1];
-			bool isRemoved = false;
-			for ( int i = 0; i < cards.Length; i++ ) {
-				if ( isRemoved ) {
-					newCards[i - 1] = cards[i];
-				} else if ( cards[i].Equals( card ) ) {
-					isRemoved = true;
+			for ( int i = 0, u = 0; i < cards.Length; i++, u++ ) {
+				if ( cards[i] == card ) {
+					u--;
 				} else {
-					newCards[i] = cards[i];
+					newCards[u] = cards[i];
 				}
 			}
 			cards = newCards;
