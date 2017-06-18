@@ -66,7 +66,7 @@ namespace PizzaOrderingSystem {
 				Ingredient[] temp = new Ingredient[ingredients.Length - 1];
 				// TODO I'll need someone to test the hell out of this one.
 				for( int i = 0, u = 0; i < ingredients.Length; i++, u++ ) {
-					if (ingredients[i].Equals(ingredient)) {
+					if( ingredients[i].Equals( ingredient ) ) {
 						u--;
 					} else {
 						temp[u] = ingredients[i];
@@ -86,6 +86,11 @@ namespace PizzaOrderingSystem {
 				if( curr.Equals( ingredient ) ) return true;
 			}
 			return false;
+		}
+
+		public bool Equals( Pizza pizza ) {
+			// TODO don't forget this...
+			return true;
 		}
 
 		/// <summary>
