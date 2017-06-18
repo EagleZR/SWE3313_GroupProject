@@ -72,7 +72,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="purchaser"></param>
 		/// <param name="items"></param>
 		/// <param name="paymentType"></param>
-		public Order( Customer purchaser, Pizza[] items, int paymentType ) : this( purchaser ) {
+		protected Order( Customer purchaser, Pizza[] items, int paymentType ) : this( purchaser ) {
 			this.pizzas = items;
 			this.paymentType = paymentType;
 		}
@@ -84,7 +84,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="items"></param>
 		/// <param name="paymentType"></param>
 		/// <param name="card"></param>
-		public Order( Customer purchaser, Pizza[] items, int paymentType, Card card ) : this( purchaser, items, paymentType ) {
+		protected Order( Customer purchaser, Pizza[] items, int paymentType, Card card ) : this( purchaser, items, paymentType ) {
 			this.PaymentCard = card;
 		}
 
@@ -96,7 +96,11 @@ namespace PizzaOrderingSystem {
 		/// <param name="paymentType"></param>
 		/// <param name="card"></param>
 		/// <param name="orderStatus"></param>
-		public Order( Customer purchaser, Pizza[] items, int paymentType, Card card, int orderStatus ) : this( purchaser, items, paymentType ) {
+		protected Order( Customer purchaser, Pizza[] items, int paymentType, Card card, int orderStatus ) {
+			this.purchaser = purchaser;
+			this.pizzas = items;
+			this.paymentType = paymentType;
+			this.PaymentCard = card;
 			this.orderStatus = orderStatus;
 		}
 		#endregion

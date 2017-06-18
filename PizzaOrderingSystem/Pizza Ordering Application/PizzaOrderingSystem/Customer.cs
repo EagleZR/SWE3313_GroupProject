@@ -46,7 +46,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="name"></param>
 		/// <param name="address"></param>
 		/// <param name="phoneNumber"></param>
-		public Customer ( string name, string address, string phoneNumber ) { 
+		protected Customer ( string name, string address, string phoneNumber ) { 
 			// TODO Do we even need this, or should we create a new customer in the database, then load back into here?
 			this.Name = name;
 			this.Address = address;
@@ -61,7 +61,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="phoneNumber"></param>
 		/// <param name="pastOrders"></param>
 		/// <param name="cards"></param>
-		public Customer ( string name, string address, string phoneNumber, Order[] pastOrders, Card[] cards ) : this( name, address, phoneNumber ) {
+		protected Customer ( string name, string address, string phoneNumber, Order[] pastOrders, Card[] cards ) : this( name, address, phoneNumber ) {
 			this.pastOrders = pastOrders;
 			this.cards = cards;
 		}

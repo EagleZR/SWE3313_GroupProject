@@ -5,6 +5,10 @@ namespace PizzaOrderingSystem {
 		#region Private Variables
 		private int pizzaSize;
 		private Ingredient[] ingredients;
+		/// <summary>
+		/// Added to differentiate between identical pizzas in the same order.
+		/// </summary>
+		protected DateTime dateCreated;
 		#endregion
 
 		#region Properties
@@ -28,6 +32,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="pizzaSize"></param>
 		public Pizza( int pizzaSize ) {
 			this.PizzaSize = pizzaSize;
+			this.dateCreated = System.DateTime.UtcNow;
 		}
 
 		/// <summary>
@@ -35,9 +40,10 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="pizzaSize"></param>
 		/// <param name="ingredients"></param>
-		public Pizza( int pizzaSize, Ingredient[] ingredients ) {
+		protected Pizza( int pizzaSize, Ingredient[] ingredients ) {
 			this.PizzaSize = pizzaSize;
 			this.ingredients = ingredients;
+			this.dateCreated = System.DateTime.UtcNow;
 		}
 		#endregion
 
@@ -89,7 +95,18 @@ namespace PizzaOrderingSystem {
 		}
 
 		public bool Equals( Pizza pizza ) {
-			// TODO don't forget this...
+			return (this.dateCreated.Equals(pizza.dateCreated)) && Equals(pizza.ingredients) && this.pizzaSize == pizza.pizzaSize;
+		}
+
+		private bool Equals( Ingredient[] ingredients ) {
+			if (this.ingredients.Length != ingredients.Length ) {
+				return false;
+			}
+			for(int i = 0; i < this.ingredients.Length; i++ ) {
+				if ( this.ingredients[i] != ingredients[i]) {
+					return false;
+				}
+			}
 			return true;
 		}
 
