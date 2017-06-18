@@ -11,7 +11,7 @@ namespace PizzaOrderingSystem {
 		public int PizzaSize {
 			get { return this.pizzaSize; }
 			set {
-				if (value <= (int)Enums.PizzaSize.LARGE && value >= (int)Enums.PizzaSize.SMALL) {
+				if( value <= (int)Enums.PizzaSize.LARGE && value >= (int)Enums.PizzaSize.SMALL ) {
 					this.pizzaSize = value;
 				}
 			}
@@ -26,7 +26,7 @@ namespace PizzaOrderingSystem {
 		/// Use this if you're creating a pizza with no toppings.
 		/// </summary>
 		/// <param name="pizzaSize"></param>
-		public Pizza(int pizzaSize) {
+		public Pizza( int pizzaSize ) {
 			this.PizzaSize = pizzaSize;
 		}
 
@@ -35,19 +35,57 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="pizzaSize"></param>
 		/// <param name="ingredients"></param>
-		public Pizza(int pizzaSize, Ingredient[] ingredients) {
+		public Pizza( int pizzaSize, Ingredient[] ingredients ) {
 			this.PizzaSize = pizzaSize;
 			this.ingredients = ingredients;
 		}
 		#endregion
 
 		#region Methods
-		public void AddIngredient(Ingredient ingredient) {
-
+		/// <summary>
+		/// Adds the specified <see cref="Ingredient"/>, if applicable. 
+		/// </summary>
+		/// <param name="ingredient"></param>
+		public void AddIngredient( Ingredient ingredient ) {
+			if( !Contains( ingredient ) ) {
+				Ingredient[] temp = new Ingredient[Ingredients.Length + 1];
+				for( int i = 0; i < temp.Length; i++ ) {
+					temp[i] = ingredients[i];
+				}
+				temp[temp.Length - 1] = ingredient;
+				ingredients = temp;
+			}
 		}
 
-		public void RemoveIngredient(Ingredient ingredient) {
+		/// <summary>
+		/// Removes the specified <see cref="Ingredient"/>, if applicable.  
+		/// </summary>
+		/// <param name="ingredient"></param>
+		public void RemoveIngredient( Ingredient ingredient ) {
+			if( Contains( ingredient ) ) {
+				Ingredient[] temp = new Ingredient[ingredients.Length - 1];
+				// TODO I'll need someone to test the hell out of this one.
+				for( int i = 0, u = 0; i < ingredients.Length; i++, u++ ) {
+					if (ingredients[i].Equals(ingredient)) {
+						u--;
+					} else {
+						temp[u] = ingredients[i];
+					}
+				}
+				ingredients = temp;
+			}
+		}
 
+		/// <summary>
+		/// Checks if this pizza has an ingredient of the same name as the parameter.
+		/// </summary>
+		/// <param name="ingredient"></param>
+		/// <returns></returns>
+		public bool Contains( Ingredient ingredient ) {
+			foreach( Ingredient curr in ingredients ) {
+				if( curr.Equals( ingredient ) ) return true;
+			}
+			return false;
 		}
 
 		/// <summary>
@@ -57,8 +95,8 @@ namespace PizzaOrderingSystem {
 		public string PrintIngredients() {
 			string returnValue = "";
 
-			if (ingredients != null) {
-				for (int i = 0; i < ingredients.Length; i++) {
+			if( ingredients != null ) {
+				for( int i = 0; i < ingredients.Length; i++ ) {
 					returnValue += ingredients[i].Name + ", ";
 				}
 			}

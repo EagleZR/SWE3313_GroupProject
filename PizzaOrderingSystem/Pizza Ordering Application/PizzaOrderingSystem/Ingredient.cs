@@ -92,6 +92,18 @@ namespace PizzaOrderingSystem {
 		public Ingredient Copy() {
 			return new Ingredient( this.Name, this.Category, this.Amount );
 		}
+
+		/// <summary>
+		/// Checks if the <see cref="Name"/>s are equal. 
+		/// </summary>
+		/// <param name="ingredient"></param>
+		/// <returns></returns>
+		public bool Equals(Ingredient ingredient) {
+			if (this.name == ingredient.name) {
+				return true;
+			}
+			return false;
+		}
 		#endregion
 	}
 }
