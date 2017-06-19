@@ -106,6 +106,10 @@ namespace PizzaOrderingSystem {
 		#endregion
 
 		#region Methods
+		/// <summary>
+		/// Adds a pizza to the order. 
+		/// </summary>
+		/// <param name="pizza"></param>
 		public void AddPizza( Pizza pizza ) {
 			if( this.OrderStatus == (int)Enums.OrderStatus.PENDING ) {
 				Pizza[] tempItems = pizzas;
@@ -117,6 +121,10 @@ namespace PizzaOrderingSystem {
 			} // TODO Throw exception?
 		}
 
+		/// <summary>
+		/// Removes a pizza from the order
+		/// </summary>
+		/// <param name="pizza">Must be the exact (same pointer) pizza you want removed. If you need the list of pizzas, get it from <see cref="Order.Pizzas"/>.</param>
 		public void RemovePizza( Pizza pizza ) {
 			if( this.OrderStatus == (int)Enums.OrderStatus.PENDING ) {
 				Pizza[] temp = new Pizza[pizzas.Length];
@@ -131,6 +139,9 @@ namespace PizzaOrderingSystem {
 			}
 		}
 
+		/// <summary>
+		/// Submits the order to the store. After this method has been run, this order can no longer be edited.
+		/// </summary>
 		public void PlaceOrder() {
 			if( this.OrderStatus == (int)Enums.OrderStatus.PENDING ) {
 				this.orderStatus = (int)Enums.OrderStatus.SUBMITTED;
@@ -138,6 +149,10 @@ namespace PizzaOrderingSystem {
 			} // TODO Throw exception?
 		}
 
+		/// <summary>
+		/// Generates the receipt for this order.
+		/// </summary>
+		/// <returns></returns>
 		public string GenerateReceipt() {
 			string receipt = "Receipt:\n";
 			// TODO Build a receipt to be returned.
@@ -155,7 +170,11 @@ namespace PizzaOrderingSystem {
 			return receipt;
 		}
 
+		/// <summary>
+		/// Fulfills the order 
+		/// </summary>
 		public void FulfillOrder() {
+			// idk if we need this or will use it, but I included it just in case
 			if( this.OrderStatus == (int)Enums.OrderStatus.SUBMITTED ) {
 				this.orderStatus = (int)Enums.OrderStatus.COMPLETED;
 				// TODO do more stuff

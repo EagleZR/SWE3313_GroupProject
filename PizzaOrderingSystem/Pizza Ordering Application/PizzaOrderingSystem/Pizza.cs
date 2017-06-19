@@ -40,7 +40,7 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="pizzaSize"></param>
 		/// <param name="ingredients"></param>
-		protected Pizza( int pizzaSize, Ingredient[] ingredients ) {
+		public Pizza( int pizzaSize, Ingredient[] ingredients ) {
 			this.PizzaSize = pizzaSize;
 			this.ingredients = ingredients;
 			this.dateCreated = System.DateTime.UtcNow;
@@ -94,10 +94,20 @@ namespace PizzaOrderingSystem {
 			return false;
 		}
 
+		/// <summary>
+		/// Checks if the <see cref="DateTime"/> that the pizzas were (originally) instantiated, the ingredients, and the pizza size all match. 
+		/// </summary>
+		/// <param name="pizza"></param>
+		/// <returns></returns>
 		public bool Equals( Pizza pizza ) {
 			return (this.dateCreated.Equals(pizza.dateCreated)) && Equals(pizza.ingredients) && this.pizzaSize == pizza.pizzaSize;
 		}
 
+		/// <summary>
+		/// Checks if the ingredients match this pizza's ingredients. 
+		/// </summary>
+		/// <param name="ingredients"></param>
+		/// <returns></returns>
 		private bool Equals( Ingredient[] ingredients ) {
 			if (this.ingredients.Length != ingredients.Length ) {
 				return false;
