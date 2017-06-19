@@ -27,7 +27,7 @@ namespace PizzaOrderingSystem {
 		public int Amount {
 			get { return this.amount; }
 			set {
-				if ( value >= (int)Enums.IngredientAmount.NONE && value <= (int)Enums.IngredientAmount.EXTRA ) {
+				if( value >= (int)Enums.IngredientAmount.NONE && value <= (int)Enums.IngredientAmount.EXTRA ) {
 					this.amount = value;
 				}
 			}
@@ -40,7 +40,7 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="name"></param>
 		/// <param name="category">Use <see cref="PizzaOrderingSystem.Enums.IngredientCategory"/></param>
-		public Ingredient ( string name, int category ) {
+		public Ingredient( string name, int category ) {
 			this.Name = name;
 			this.Category = category;
 		}
@@ -51,7 +51,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="name"></param>
 		/// <param name="category">Use <see cref="PizzaOrderingSystem.Enums.IngredientCategory"/></param>
 		/// <param name="amount">Use <see cref="PizzaOrderingSystem.Enums.IngredientAmount"/></param>
-		public Ingredient ( string name, int category, int amount ) : this( name, category ) {
+		public Ingredient( string name, int category, int amount ) : this( name, category ) {
 			this.Amount = amount;
 		}
 		#endregion
@@ -60,8 +60,8 @@ namespace PizzaOrderingSystem {
 		/// <summary>
 		/// Increases the amount of this ingredient, not to exceed <see cref="Enums.IngredientAmount.EXTRA"/>.
 		/// </summary>
-		protected void IncreaseAmount () {
-			if ( this.amount <= (int)Enums.IngredientAmount.EXTRA ) {
+		protected void IncreaseAmount() {
+			if( this.amount <= (int)Enums.IngredientAmount.EXTRA ) {
 				this.amount++;
 			}
 		}
@@ -69,8 +69,8 @@ namespace PizzaOrderingSystem {
 		/// <summary>
 		/// Decreases the amount of this ingredient, not to fall below <see cref="Enums.IngredientAmount.NONE"/>.
 		/// </summary>
-		protected void DecreaseAmount () {
-			if ( this.amount >= (int)Enums.IngredientAmount.NONE ) {
+		protected void DecreaseAmount() {
+			if( this.amount >= (int)Enums.IngredientAmount.NONE ) {
 				this.amount--;
 			}
 		}
@@ -79,8 +79,8 @@ namespace PizzaOrderingSystem {
 		/// Sets the ingredient amount to the given value if the value does not exceed <see cref="Enums.IngredientAmount.EXTRA"/> or fall below <see cref="Enums.IngredientAmount.NONE"/>
 		/// </summary>
 		/// <param name="amount">Use <see cref="Enums.IngredientAmount"/>.</param>
-		public void SetAmount ( int amount ) {
-			if ( amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.NONE ) {
+		public void SetAmount( int amount ) {
+			if( amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.NONE ) {
 				this.amount = amount;
 			}
 		}
@@ -98,11 +98,17 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="ingredient"></param>
 		/// <returns></returns>
-		public bool Equals(Ingredient ingredient) {
-			if (this.name == ingredient.name) {
+		public bool Equals( Ingredient ingredient ) {
+			if( this.name == ingredient.name ) {
 				return true;
 			}
 			return false;
+		}
+
+		protected string GenerateReceipt() {
+			string returnValue = "";
+			returnValue += "\t" + this.name + ": " + ( this.amount == (int)Enums.IngredientAmount.LIGHT ? "Light" : ( this.amount == (int)Enums.IngredientAmount.NORMAL ? "Normal" : ( this.amount == (int)Enums.IngredientAmount.EXTRA ? "Extra" : "" ) ) );
+			return returnValue;
 		}
 		#endregion
 	}

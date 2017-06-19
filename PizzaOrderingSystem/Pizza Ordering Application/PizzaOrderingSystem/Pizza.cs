@@ -9,6 +9,8 @@ namespace PizzaOrderingSystem {
 		/// Added to differentiate between identical pizzas in the same order.
 		/// </summary>
 		protected DateTime dateCreated;
+		private static int limitCheese = 2;
+		private static int limitSauce = 1;
 		#endregion
 
 		#region Properties
@@ -53,7 +55,7 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="ingredient"></param>
 		public void AddIngredient( Ingredient ingredient ) {
-			if( !Contains( ingredient ) ) {
+			if( !Contains( ingredient ) && ( ingredient.Category == (int)Enums.IngredientCategory.CHEESE && CountIngredients( ingredient.Category ) < limitCheese ) && ( ingredient.Category == (int)Enums.IngredientCategory.SAUCE && CountIngredients( ingredient.Category ) < limitSauce ) ) {
 				Ingredient[] temp = new Ingredient[Ingredients.Length + 1];
 				for( int i = 0; i < temp.Length; i++ ) {
 					temp[i] = ingredients[i];
@@ -83,6 +85,20 @@ namespace PizzaOrderingSystem {
 		}
 
 		/// <summary>
+		/// If the ingredient is on the pizza, it sets the amount. If the ingredient is not on the pizza, it adds it at the specified amount.
+		/// </summary>
+		/// <param name="ingredient"></param>
+		/// <param name="amount"></param>
+		public void SetIngredientAmount( Ingredient ingredient, int amount ) {
+			if( Contains( ingredient ) ) {
+				ingredient.SetAmount( amount );
+			} else {
+				AddIngredient( ingredient );
+				ingredient.SetAmount( amount );
+			}
+		}
+
+		/// <summary>
 		/// Checks if this pizza has an ingredient of the same name as the parameter.
 		/// </summary>
 		/// <param name="ingredient"></param>
@@ -100,7 +116,7 @@ namespace PizzaOrderingSystem {
 		/// <param name="pizza"></param>
 		/// <returns></returns>
 		public bool Equals( Pizza pizza ) {
-			return (this.dateCreated.Equals(pizza.dateCreated)) && Equals(pizza.ingredients) && this.pizzaSize == pizza.pizzaSize;
+			return ( this.dateCreated.Equals( pizza.dateCreated ) ) && Equals( pizza.ingredients ) && this.pizzaSize == pizza.pizzaSize;
 		}
 
 		/// <summary>
@@ -109,11 +125,11 @@ namespace PizzaOrderingSystem {
 		/// <param name="ingredients"></param>
 		/// <returns></returns>
 		private bool Equals( Ingredient[] ingredients ) {
-			if (this.ingredients.Length != ingredients.Length ) {
+			if( this.ingredients.Length != ingredients.Length ) {
 				return false;
 			}
-			for(int i = 0; i < this.ingredients.Length; i++ ) {
-				if ( this.ingredients[i] != ingredients[i]) {
+			for( int i = 0; i < this.ingredients.Length; i++ ) {
+				if( this.ingredients[i] != ingredients[i] ) {
 					return false;
 				}
 			}
@@ -134,6 +150,25 @@ namespace PizzaOrderingSystem {
 			}
 
 			return returnValue;
+		}
+
+		protected int CountIngredients( int ingredientCategory ) {
+			int counter = 0;
+			for( int i = 0; i < ingredients.Length; i++ ) {
+				if( ingredients[i].Category == ingredientCategory ) {
+					counter++;
+				}
+			}
+			return counter;
+		}
+
+		protected string PrintReceipt() {
+			string returnString = "";
+			returnString += "Pizza size: " + ( this.pizzaSize == (int)Enums.PizzaSize.SMALL ? "Small" : ( this.pizzaSize == (int)Enums.PizzaSize.MEDIUM ? "Medium" : "Large" ) );
+			for( int i = 0; i < this.ingredients.Length; i++ ) {
+
+			}
+			return returnString;
 		}
 		#endregion
 	}
