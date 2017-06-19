@@ -303,7 +303,8 @@ namespace Pizza_Ordering_Application
 
             foreach(Ingredient ingredient in ingredients)
             {
-                pizza.AddIngredient(ingredient);
+                //pizza.AddIngredient(ingredient);
+                pizza.Ingredients[i] = ingredient;
                 i++;
             }
 
