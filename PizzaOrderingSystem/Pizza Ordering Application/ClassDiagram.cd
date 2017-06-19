@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="PizzaOrderingSystem.Pizza">
+    <Position X="20.5" Y="1.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAgAACAIAAAoAAAAKAACAAAABQAIAAAAAAQUAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Pizza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaOrderingSystem.Order">
+    <Position X="11.5" Y="1.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEEEACABAAAgAQEAAAABAAAAEIAAABAAABCAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaOrderingSystem.Ingredient">
+    <Position X="21.25" Y="8.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQAAAAAAAAAgAAAAASAAgAEgAAAAAAIAAAACAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Ingredient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaOrderingSystem.Enums">
+    <Position X="12.5" Y="8" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PizzaOrderingSystem.Enums.IngredientAmount" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PizzaOrderingSystem\Enums.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PizzaOrderingSystem.Enums.IngredientCategory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PizzaOrderingSystem\Enums.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PizzaOrderingSystem.Enums.PizzaSize" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PizzaOrderingSystem\Enums.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PizzaOrderingSystem.Enums.OrderStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PizzaOrderingSystem\Enums.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PizzaOrderingSystem.Enums.PaymentType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PizzaOrderingSystem\Enums.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaOrderingSystem.Customer">
+    <Position X="1.5" Y="1.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>EAAAIAAgAAAAAAQAAAgAQAQIAEIEAAACAAAAABAAAAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PizzaOrderingSystem.Card">
+    <Position X="1.5" Y="8.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>IAAACCAAABAAgAAQgAAACAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>PizzaOrderingSystem\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
