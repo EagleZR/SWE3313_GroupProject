@@ -15,6 +15,7 @@ namespace Pizza_Ordering_Application
     {
         List<Ingredient> ingredients = new List<Ingredient>();
         List<Pizza> pizzas = new List<Pizza>();
+        Pizza pizza = new Pizza(0, null);
         Ingredient meat = new Ingredient("", 0, 0);
         Ingredient vegetable = new Ingredient("", 0, 0);
         Ingredient cheese = new Ingredient("", 0, 0);
@@ -66,6 +67,8 @@ namespace Pizza_Ordering_Application
             Cheeses.Enabled = true;
             CheesesAmount.Visible = false;
 
+            ingredients.Clear();
+
             foreach (int i in Meats.CheckedIndices)
             {
                 Meats.SetItemCheckState(i, CheckState.Unchecked);
@@ -115,6 +118,14 @@ namespace Pizza_Ordering_Application
                 NormalM.Checked = false;
                 MoreM.Checked = false;
             }
+
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                if (pizza.Contains(meat))
+                {
+                    pizza.RemoveIngredient(meat);
+                }
+            }
         }
 
         private void Vegetables_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -130,6 +141,14 @@ namespace Pizza_Ordering_Application
                 NormalV.Checked = false;
                 MoreV.Checked = false;
             }
+
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                if (pizza.Contains(vegetable))
+                {
+                    pizza.RemoveIngredient(vegetable);
+                }
+            }
         }
 
         private void Cheeses_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -144,6 +163,14 @@ namespace Pizza_Ordering_Application
                 LessC.Checked = false;
                 NormalC.Checked = false;
                 MoreC.Checked = false;
+            }
+
+            else if (e.NewValue == CheckState.Unchecked)
+            {
+                if (pizza.Contains(cheese))
+                {
+                    pizza.RemoveIngredient(cheese);
+                }
             }
         }
 
@@ -231,6 +258,24 @@ namespace Pizza_Ordering_Application
         private void BackButtonC_Click(object sender, EventArgs e)
         {
             AddToCartPanel.Visible = false;
+            ItemCustomizationPanel.Visible = false;
+
+            ingredients.Clear();
+
+            foreach (int i in Meats.CheckedIndices)
+            {
+                Meats.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
+            foreach (int i in Vegetables.CheckedIndices)
+            {
+                Vegetables.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
+            foreach (int i in Cheeses.CheckedIndices)
+            {
+                Cheeses.SetItemCheckState(i, CheckState.Unchecked);
+            }
         }
 
         private void AddToCartButton_Click(object sender, EventArgs e)
@@ -254,11 +299,11 @@ namespace Pizza_Ordering_Application
                 pSize = 2;
             }
 
-            Pizza pizza = new Pizza(pSize, defaultArray);
+            pizza = new Pizza(pSize, defaultArray);
 
             foreach(Ingredient ingredient in ingredients)
             {
-                pizza.Ingredients[i] = ingredient;
+                pizza.AddIngredient(ingredient);
                 i++;
             }
 
@@ -272,7 +317,7 @@ namespace Pizza_Ordering_Application
 
             foreach(Pizza p in pizzas)
             {
-                ItemList.Items.Add(p, true);
+                ItemList.Items.Add(p.PrintIngredients(), true);
             }
         }
 
