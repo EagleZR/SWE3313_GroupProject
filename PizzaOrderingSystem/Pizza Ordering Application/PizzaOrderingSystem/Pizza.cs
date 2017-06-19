@@ -35,6 +35,7 @@ namespace PizzaOrderingSystem {
 		public Pizza( int pizzaSize ) {
 			this.PizzaSize = pizzaSize;
 			this.dateCreated = System.DateTime.UtcNow;
+			this.ingredients = new Ingredient[0];
 		}
 
 		/// <summary>
