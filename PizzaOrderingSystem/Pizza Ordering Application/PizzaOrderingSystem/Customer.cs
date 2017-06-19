@@ -65,6 +65,13 @@ namespace PizzaOrderingSystem {
 			this.pastOrders = pastOrders;
 			this.cards = cards;
 		}
+
+		/// <summary>
+		/// I'm removing this after Michael gets the DB class up
+		/// </summary>
+		public Customer() {
+
+		}
 		#endregion
 
 		#region Methods

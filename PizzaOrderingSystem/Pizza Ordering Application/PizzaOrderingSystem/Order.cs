@@ -64,6 +64,7 @@ namespace PizzaOrderingSystem {
 		public Order( Customer purchaser ) {
 			this.purchaser = purchaser;
 			this.orderStatus = (int)Enums.OrderStatus.PENDING;
+			this.pizzas = new Pizza[0];
 		}
 
 		/// <summary>
