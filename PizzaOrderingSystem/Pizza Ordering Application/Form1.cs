@@ -15,7 +15,7 @@ namespace Pizza_Ordering_Application
     {
         List<Ingredient> ingredients = new List<Ingredient>();
         List<Pizza> pizzas = new List<Pizza>();
-        Pizza pizza = new Pizza(0, null);
+        Pizza pizza = null;
         Ingredient meat = new Ingredient("", 0, 0);
         Ingredient vegetable = new Ingredient("", 0, 0);
         Ingredient cheese = new Ingredient("", 0, 0);
@@ -90,18 +90,21 @@ namespace Pizza_Ordering_Application
         private void OrderSPizza_Click(object sender, EventArgs e)
         {
             ItemCustomizationPanel.Visible = true;
+            pizza = new Pizza(0, null);
             PizzaSizeLabel.Text = "Small Pizza";
         }
 
         private void OrderMPizza_Click(object sender, EventArgs e)
         {
             ItemCustomizationPanel.Visible = true;
+            pizza = new Pizza(1, null);
             PizzaSizeLabel.Text = "Medium Pizza";
         }
 
         private void OrderLPizza_Click(object sender, EventArgs e)
         {
             ItemCustomizationPanel.Visible = true;
+            pizza = new Pizza(2, null);
             PizzaSizeLabel.Text = "Large Pizza";
         }
 
@@ -177,7 +180,7 @@ namespace Pizza_Ordering_Application
         private void LessM_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            meat.SetAmount(0);
+            meat.SetAmount((int)Enums.IngredientAmount.LIGHT);
             Meats.Enabled = true;
             MeatToppingsAmount.Visible = false;
             ingredients.Add(meat);        
@@ -186,7 +189,7 @@ namespace Pizza_Ordering_Application
         private void NormalM_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            meat.SetAmount(1);
+            meat.SetAmount((int)Enums.IngredientAmount.NORMAL);
             Meats.Enabled = true;
             MeatToppingsAmount.Visible = false;
             ingredients.Add(meat);
@@ -195,7 +198,7 @@ namespace Pizza_Ordering_Application
         private void MoreM_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            meat.SetAmount(2);
+            meat.SetAmount((int)Enums.IngredientAmount.EXTRA);
             Meats.Enabled = true;
             MeatToppingsAmount.Visible = false;
             ingredients.Add(meat);
@@ -204,7 +207,7 @@ namespace Pizza_Ordering_Application
         private void LessV_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            vegetable.SetAmount(0);
+            vegetable.SetAmount((int)Enums.IngredientAmount.LIGHT);
             Vegetables.Enabled = true;
             VeggiesToppingsAmount.Visible = false;
             ingredients.Add(vegetable);
@@ -213,7 +216,7 @@ namespace Pizza_Ordering_Application
         private void NormalV_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            vegetable.SetAmount(1);
+            vegetable.SetAmount((int)Enums.IngredientAmount.NORMAL);
             Vegetables.Enabled = true;
             VeggiesToppingsAmount.Visible = false;
             ingredients.Add(vegetable);
@@ -222,7 +225,7 @@ namespace Pizza_Ordering_Application
         private void MoreV_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            vegetable.SetAmount(2);
+            vegetable.SetAmount((int)Enums.IngredientAmount.EXTRA);
             Vegetables.Enabled = true;
             VeggiesToppingsAmount.Visible = false;
             ingredients.Add(vegetable);
@@ -231,7 +234,7 @@ namespace Pizza_Ordering_Application
         private void LessC_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            cheese.SetAmount(0);
+            cheese.SetAmount((int)Enums.IngredientAmount.LIGHT);
             Cheeses.Enabled = true;
             CheesesAmount.Visible = false;
             ingredients.Add(cheese);
@@ -240,7 +243,7 @@ namespace Pizza_Ordering_Application
         private void NormalC_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            cheese.SetAmount(1);
+            cheese.SetAmount((int)Enums.IngredientAmount.NORMAL);
             Cheeses.Enabled = true;
             CheesesAmount.Visible = false;
             ingredients.Add(cheese);
@@ -249,7 +252,7 @@ namespace Pizza_Ordering_Application
         private void MoreC_Click(object sender, EventArgs e)
         {
             AddToCartButton.Enabled = true;
-            cheese.SetAmount(2);
+            cheese.SetAmount((int)Enums.IngredientAmount.EXTRA);
             Cheeses.Enabled = true;
             CheesesAmount.Visible = false;
             ingredients.Add(cheese);
@@ -282,29 +285,29 @@ namespace Pizza_Ordering_Application
         {
             int i = 0;
             int pSize = 0;
-            Ingredient[] defaultArray = new Ingredient[100];
+            Ingredient[] defaultArray = new Ingredient[ingredients.Count];
 
             if (PizzaSizeLabel.Text == "Small Pizza")
             {
-                pSize = 0;
+                pSize = (int)Enums.PizzaSize.SMALL;
             }
 
             else if (PizzaSizeLabel.Text == "Medium Pizza")
             {
-                pSize = 1;
+                pSize = (int)Enums.PizzaSize.MEDIUM;
             }
 
             else if (PizzaSizeLabel.Text == "Large Pizza")
             {
-                pSize = 2;
+                pSize = (int)Enums.PizzaSize.LARGE;
             }
 
-            pizza = new Pizza(pSize, defaultArray);
+            pizza = new Pizza(pSize, null);
 
             foreach(Ingredient ingredient in ingredients)
             {
-                //pizza.AddIngredient(ingredient);
-                pizza.Ingredients[i] = ingredient;
+                pizza.AddIngredient(ingredient);
+                //pizza.Ingredients[i] = ingredient;
                 i++;
             }
 
