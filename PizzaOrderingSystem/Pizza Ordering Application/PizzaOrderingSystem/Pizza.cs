@@ -104,8 +104,10 @@ namespace PizzaOrderingSystem {
 		/// <param name="ingredient"></param>
 		/// <returns></returns>
 		public bool Contains( Ingredient ingredient ) {
-			foreach( Ingredient curr in ingredients ) {
-				if( curr.Equals( ingredient ) ) return true;
+			if( ingredients != null && ingredients.Length > 0 ) {
+				foreach( Ingredient curr in ingredients ) {
+					if( curr.Equals( ingredient ) ) return true;
+				}
 			}
 			return false;
 		}
