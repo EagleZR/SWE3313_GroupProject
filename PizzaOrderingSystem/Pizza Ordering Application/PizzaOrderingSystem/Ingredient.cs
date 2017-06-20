@@ -99,10 +99,11 @@ namespace PizzaOrderingSystem {
 		/// <param name="ingredient"></param>
 		/// <returns></returns>
 		public bool Equals( Ingredient ingredient ) {
-			if( this.name == ingredient.name ) {
-				return true;
-			}
-			return false;
+			return this.name == ingredient.name;
+		}
+
+		public bool Equals(string ingredientName) {
+			return this.name == ingredientName;
 		}
 
 		protected string GenerateReceipt() {

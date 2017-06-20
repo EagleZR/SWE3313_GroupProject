@@ -56,10 +56,13 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="ingredient"></param>
 		public void AddIngredient( Ingredient ingredient ) {
-			if( !Contains( ingredient ) && ( ingredient.Category == (int)Enums.IngredientCategory.CHEESE && CountIngredients( ingredient.Category ) < limitCheese ) && ( ingredient.Category == (int)Enums.IngredientCategory.SAUCE && CountIngredients( ingredient.Category ) < limitSauce ) ) {
+			Console.WriteLine( ingredient.Name );
+			if( !Contains( ingredient ) ) {
 				Ingredient[] temp = new Ingredient[Ingredients.Length + 1];
-				for( int i = 0; i < temp.Length; i++ ) {
-					temp[i] = ingredients[i];
+				if( ingredients.Length > 0 ) {
+					for( int i = 0; i < ingredients.Length; i++ ) {
+						temp[i] = ingredients[i];
+					}
 				}
 				temp[temp.Length - 1] = ingredient;
 				ingredients = temp;
@@ -111,6 +114,15 @@ namespace PizzaOrderingSystem {
 				}
 			}
 			return false;
+		}
+
+		public Ingredient Contains( string ingredientName ) {
+			if( ingredients != null && ingredients.Length > 0 ) {
+				foreach( Ingredient curr in ingredients ) {
+					if( curr.Equals( ingredientName ) ) return curr;
+				}
+			}
+			return null;
 		}
 
 		/// <summary>

@@ -114,8 +114,9 @@ namespace Pizza_Ordering_Application {
 				NormalM.Checked = false;
 				MoreM.Checked = false;
 			} else if( e.NewValue == CheckState.Unchecked ) {
-				if( currPizza.Contains( currIngredient ) ) {
-					currPizza.RemoveIngredient( currIngredient );
+				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+				if( curr != null ) {
+					currPizza.RemoveIngredient( curr );
 				}
 			}
 		}
@@ -131,8 +132,9 @@ namespace Pizza_Ordering_Application {
 				NormalV.Checked = false;
 				MoreV.Checked = false;
 			} else if( e.NewValue == CheckState.Unchecked ) {
-				if( currPizza.Contains( currIngredient ) ) {
-					currPizza.RemoveIngredient( currIngredient );
+				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+				if( curr != null ) {
+					currPizza.RemoveIngredient( curr );
 				}
 			}
 		}
@@ -148,8 +150,9 @@ namespace Pizza_Ordering_Application {
 				NormalC.Checked = false;
 				MoreC.Checked = false;
 			} else if( e.NewValue == CheckState.Unchecked ) {
-				if( currPizza.Contains( currIngredient ) ) {
-					currPizza.RemoveIngredient( currIngredient );
+				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+				if( curr != null ) {
+					currPizza.RemoveIngredient( curr );
 				}
 			}
 		}
@@ -225,6 +228,23 @@ namespace Pizza_Ordering_Application {
 			CheesesAmount.Visible = false;
 			currPizza.AddIngredient( currIngredient );
 		}
+
+		private void AddToCartButton_Click( object sender, EventArgs e ) {
+			currOrder.AddPizza( currPizza );
+
+			AddToCartPanel.Visible = true;
+
+			ItemList.Items.Clear();
+
+			for (int i = 0; i < currPizza.Ingredients.Length; i++ ) {
+				Console.WriteLine( currPizza.Ingredients[i].Name );
+			}
+
+			foreach( Pizza p in currOrder.Pizzas ) {
+				Console.WriteLine( "Ingredients: " +  p.PrintIngredients() );
+				ItemList.Items.Add( p.PrintIngredients(), true );
+			}
+		}
 		#endregion
 
 		#region Cart Screen
@@ -242,19 +262,6 @@ namespace Pizza_Ordering_Application {
 
 			foreach( int i in Cheeses.CheckedIndices ) {
 				Cheeses.SetItemCheckState( i, CheckState.Unchecked );
-			}
-		}
-
-		private void AddToCartButton_Click( object sender, EventArgs e ) {
-
-			currOrder.AddPizza( currPizza );
-
-			AddToCartPanel.Visible = true;
-
-			ItemList.Items.Clear();
-
-			foreach( Pizza p in currOrder.Pizzas ) {
-				ItemList.Items.Add( p.PrintIngredients(), true );
 			}
 		}
 
