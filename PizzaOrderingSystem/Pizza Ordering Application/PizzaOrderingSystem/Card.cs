@@ -19,40 +19,43 @@ namespace PizzaOrderingSystem {
 		/// Nickname for the card for usability purposes. Only sets a new nickname if no other cards by the same owner have that name. 
 		/// </summary>
 		public string CardNickname {
-			get { return this.cardNickname; }
+			get { return ( this.cardNickname == null ? "nickname uninitialized" : this.cardNickname ); }
 			set {
-                //There's a compiler error here. Try to get it fixed as soon as possible.
 				Card[] cards = owner.Cards;
 				bool validName = true;
-				for (int i = 0; i < cards.Length; i++) {
-					if (value.Equals(cards[i].CardNickname)) {
+				for( int i = 0; i < cards.Length; i++ ) {
+					if( value.Equals( cards[i].CardNickname ) ) {
 						validName = false;
 					}
 				}
-				if ( validName ) {
+				if( validName ) {
 					this.cardNickname = value;
 				}
-			} 
+			}
 		}
 		/// <summary>
 		/// Name of the cardholder.
 		/// </summary>
 		public string NameOnCard {
-			get { return this.nameOnCard; }
+			get { return ( this.nameOnCard == null ? "name uninitialized" : this.nameOnCard ); }
 			set { this.nameOnCard = value; }
 		}
 		public string CardNumber {
-			get { return this.cardNumber; }
+			get { return ( this.cardNumber == null ? "number uninitialized" : this.cardNumber ); }
 			set { this.cardNumber = value; }
 		}
 		public string ExpDate {
-			get { return this.expDate; }
+			get { return ( this.expDate == null ? "date uninitialized" : this.expDate ); }
 			set { this.expDate = value; }
+		}
+		public Customer Owner {
+			get { return this.owner; } 
+			set { this.owner = value; }
 		}
 		#endregion
 
 		#region Constructors 
-		public Card ( string nameOnCard, string cardNumber, string expDate, Customer owner ) {
+		public Card( string nameOnCard, string cardNumber, string expDate, Customer owner ) {
 			this.NameOnCard = nameOnCard;
 			this.CardNumber = cardNumber;
 			this.ExpDate = expDate;
@@ -66,7 +69,7 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="other">True if all fields are the same, excluding the nickname.</param>
 		/// <returns></returns>
-		public bool Equals (Card other) {
+		public bool Equals( Card other ) {
 			return this.NameOnCard == other.NameOnCard && this.CardNumber == other.CardNickname && this.ExpDate == other.ExpDate;
 		}
 		#endregion
