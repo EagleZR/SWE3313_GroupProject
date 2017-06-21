@@ -60,6 +60,11 @@
             this.MainMenuPanel = new System.Windows.Forms.Panel();
             this.ItemCustomizationPanel = new System.Windows.Forms.Panel();
             this.AddToCartPanel = new System.Windows.Forms.Panel();
+            this.CheckoutPanel = new System.Windows.Forms.Panel();
+            this.LogoutButton = new System.Windows.Forms.Button();
+            this.OrderProgress = new System.Windows.Forms.Label();
+            this.OrderProgressLabel = new System.Windows.Forms.Label();
+            this.OrderCompleteLabel = new System.Windows.Forms.Label();
             this.CreditCardInfo = new System.Windows.Forms.GroupBox();
             this.CardNumber = new System.Windows.Forms.TextBox();
             this.ZIPCode = new System.Windows.Forms.TextBox();
@@ -108,6 +113,7 @@
             this.MainMenuPanel.SuspendLayout();
             this.ItemCustomizationPanel.SuspendLayout();
             this.AddToCartPanel.SuspendLayout();
+            this.CheckoutPanel.SuspendLayout();
             this.CreditCardInfo.SuspendLayout();
             this.CheesesAmount.SuspendLayout();
             this.VeggiesToppingsAmount.SuspendLayout();
@@ -429,6 +435,7 @@
             // 
             // AddToCartPanel
             // 
+            this.AddToCartPanel.Controls.Add(this.CheckoutPanel);
             this.AddToCartPanel.Controls.Add(this.CreditCardInfo);
             this.AddToCartPanel.Controls.Add(this.CheckoutButton);
             this.AddToCartPanel.Controls.Add(this.BackButtonC);
@@ -444,6 +451,55 @@
             this.AddToCartPanel.Size = new System.Drawing.Size(539, 643);
             this.AddToCartPanel.TabIndex = 24;
             this.AddToCartPanel.Visible = false;
+            // 
+            // CheckoutPanel
+            // 
+            this.CheckoutPanel.Controls.Add(this.LogoutButton);
+            this.CheckoutPanel.Controls.Add(this.OrderProgress);
+            this.CheckoutPanel.Controls.Add(this.OrderProgressLabel);
+            this.CheckoutPanel.Controls.Add(this.OrderCompleteLabel);
+            this.CheckoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CheckoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.CheckoutPanel.Name = "CheckoutPanel";
+            this.CheckoutPanel.Size = new System.Drawing.Size(539, 643);
+            this.CheckoutPanel.TabIndex = 9;
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(217, 347);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.LogoutButton.TabIndex = 3;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // OrderProgress
+            // 
+            this.OrderProgress.AutoSize = true;
+            this.OrderProgress.Location = new System.Drawing.Point(216, 223);
+            this.OrderProgress.Name = "OrderProgress";
+            this.OrderProgress.Size = new System.Drawing.Size(55, 13);
+            this.OrderProgress.TabIndex = 2;
+            this.OrderProgress.Text = "Pending...";
+            // 
+            // OrderProgressLabel
+            // 
+            this.OrderProgressLabel.AutoSize = true;
+            this.OrderProgressLabel.Location = new System.Drawing.Point(206, 141);
+            this.OrderProgressLabel.Name = "OrderProgressLabel";
+            this.OrderProgressLabel.Size = new System.Drawing.Size(80, 13);
+            this.OrderProgressLabel.TabIndex = 1;
+            this.OrderProgressLabel.Text = "Order Progress:";
+            // 
+            // OrderCompleteLabel
+            // 
+            this.OrderCompleteLabel.AutoSize = true;
+            this.OrderCompleteLabel.Location = new System.Drawing.Point(206, 50);
+            this.OrderCompleteLabel.Name = "OrderCompleteLabel";
+            this.OrderCompleteLabel.Size = new System.Drawing.Size(80, 13);
+            this.OrderCompleteLabel.TabIndex = 0;
+            this.OrderCompleteLabel.Text = "Order Complete";
             // 
             // CreditCardInfo
             // 
@@ -557,6 +613,7 @@
             this.CheckoutButton.TabIndex = 7;
             this.CheckoutButton.Text = "Checkout";
             this.CheckoutButton.UseVisualStyleBackColor = true;
+            this.CheckoutButton.Click += new System.EventHandler(this.CheckoutButton_Click);
             // 
             // BackButtonC
             // 
@@ -913,6 +970,8 @@
             this.ItemCustomizationPanel.PerformLayout();
             this.AddToCartPanel.ResumeLayout(false);
             this.AddToCartPanel.PerformLayout();
+            this.CheckoutPanel.ResumeLayout(false);
+            this.CheckoutPanel.PerformLayout();
             this.CreditCardInfo.ResumeLayout(false);
             this.CreditCardInfo.PerformLayout();
             this.CheesesAmount.ResumeLayout(false);
@@ -1000,6 +1059,11 @@
         private System.Windows.Forms.TextBox CVV;
         private System.Windows.Forms.TextBox ExpirDate;
         private System.Windows.Forms.TextBox NameOnCard;
+        private System.Windows.Forms.Panel CheckoutPanel;
+        private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.Label OrderProgress;
+        private System.Windows.Forms.Label OrderProgressLabel;
+        private System.Windows.Forms.Label OrderCompleteLabel;
     }
 }
 
