@@ -68,6 +68,9 @@ namespace Pizza_Ordering_Application {
 			ItemCustomizationPanel.Visible = true;
 			PizzaSizeLabel.Text = "Small Pizza";
 			currPizza = new Pizza( (int) Enums.PizzaSize.SMALL );
+			Meats.Enabled = true;
+			Cheeses.Enabled = true;
+			Vegetables.Enabled = true;
 
             foreach (int i in Meats.CheckedIndices)
             {
@@ -90,8 +93,11 @@ namespace Pizza_Ordering_Application {
 			ItemCustomizationPanel.Visible = true;
 			PizzaSizeLabel.Text = "Medium Pizza";
 			currPizza = new Pizza( (int)Enums.PizzaSize.MEDIUM );
+			Meats.Enabled = true;
+			Cheeses.Enabled = true;
+			Vegetables.Enabled = true;
 
-            foreach (int i in Meats.CheckedIndices)
+			foreach (int i in Meats.CheckedIndices)
             {
                 Meats.SetItemCheckState(i, CheckState.Unchecked);
             }
@@ -112,8 +118,11 @@ namespace Pizza_Ordering_Application {
 			ItemCustomizationPanel.Visible = true;
 			PizzaSizeLabel.Text = "Large Pizza";
 			currPizza = new Pizza( (int)Enums.PizzaSize.LARGE );
+			Meats.Enabled = true;
+			Cheeses.Enabled = true;
+			Vegetables.Enabled = true;
 
-            foreach (int i in Meats.CheckedIndices)
+			foreach (int i in Meats.CheckedIndices)
             {
                 Meats.SetItemCheckState(i, CheckState.Unchecked);
             }
@@ -134,11 +143,11 @@ namespace Pizza_Ordering_Application {
 		private void BackButton_Click( object sender, EventArgs e )
         {
 			MainMenuPanel.Visible = true;
-			Meats.Enabled = true;
+			Meats.Enabled = false;
 			MeatToppingsAmount.Visible = false;
-			Vegetables.Enabled = true;
+			Vegetables.Enabled = false;
 			VeggiesToppingsAmount.Visible = false;
-			Cheeses.Enabled = true;
+			Cheeses.Enabled = false;
 			CheesesAmount.Visible = false;
 
 			foreach( int i in Meats.CheckedIndices )
@@ -162,72 +171,63 @@ namespace Pizza_Ordering_Application {
 
 		private void Meats_ItemCheck( object sender, ItemCheckEventArgs e )
         {
-			if ( e.NewValue == CheckState.Checked )
-            {
-				currIngredient = new Ingredient( Meats.SelectedItem.ToString(), (int)Enums.IngredientCategory.MEAT);
-				AddToCartButton.Enabled = false;
-				Meats.Enabled = false;
-				MeatToppingsAmount.Visible = true;
-				MeatToppingsAmount.Text = Meats.SelectedItem.ToString() + " Amount?";
-				LessM.Checked = false;
-				NormalM.Checked = false;
-				MoreM.Checked = false;
-			}
-
-            else if( e.NewValue == CheckState.Unchecked )
-            {
-				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
-				if( curr != null )
-                {
-					currPizza.RemoveIngredient( curr );
+			if( Meats.Enabled ) {
+				if( e.NewValue == CheckState.Checked ) {
+					currIngredient = new Ingredient( Meats.SelectedItem.ToString(), (int)Enums.IngredientCategory.MEAT );
+					AddToCartButton.Enabled = false;
+					Meats.Enabled = false;
+					MeatToppingsAmount.Visible = true;
+					MeatToppingsAmount.Text = Meats.SelectedItem.ToString() + " Amount?";
+					LessM.Checked = false;
+					NormalM.Checked = false;
+					MoreM.Checked = false;
+				} else if( e.NewValue == CheckState.Unchecked ) {
+					Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+					if( curr != null ) {
+						currPizza.RemoveIngredient( curr );
+					}
 				}
 			}
 		}
 
 		private void Vegetables_ItemCheck( object sender, ItemCheckEventArgs e )
         {
-			if( e.NewValue == CheckState.Checked )
-            {
-				currIngredient = new Ingredient( Vegetables.SelectedItem.ToString(), (int)Enums.IngredientCategory.VEGETABLE );
-				AddToCartButton.Enabled = false;
-				Vegetables.Enabled = false;
-				VeggiesToppingsAmount.Visible = true;
-				VeggiesToppingsAmount.Text = Vegetables.SelectedItem.ToString() + " Amount?";
-				LessV.Checked = false;
-				NormalV.Checked = false;
-				MoreV.Checked = false;
-			}
-
-            else if( e.NewValue == CheckState.Unchecked )
-            {
-				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
-				if( curr != null )
-                {
-					currPizza.RemoveIngredient( curr );
+			if( Vegetables.Enabled ) {
+				if( e.NewValue == CheckState.Checked ) {
+					currIngredient = new Ingredient( Vegetables.SelectedItem.ToString(), (int)Enums.IngredientCategory.VEGETABLE );
+					AddToCartButton.Enabled = false;
+					Vegetables.Enabled = false;
+					VeggiesToppingsAmount.Visible = true;
+					VeggiesToppingsAmount.Text = Vegetables.SelectedItem.ToString() + " Amount?";
+					LessV.Checked = false;
+					NormalV.Checked = false;
+					MoreV.Checked = false;
+				} else if( e.NewValue == CheckState.Unchecked ) {
+					Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+					if( curr != null ) {
+						currPizza.RemoveIngredient( curr );
+					}
 				}
 			}
 		}
 
 		private void Cheeses_ItemCheck( object sender, ItemCheckEventArgs e )
         {
-			if( e.NewValue == CheckState.Checked )
-            {
-				currIngredient = new Ingredient( Cheeses.SelectedItem.ToString(), (int)Enums.IngredientCategory.CHEESE );
-				AddToCartButton.Enabled = false;
-				Cheeses.Enabled = false;
-				CheesesAmount.Visible = true;
-				CheesesAmount.Text = Cheeses.SelectedItem.ToString() + " Amount?";
-				LessC.Checked = false;
-				NormalC.Checked = false;
-				MoreC.Checked = false;
-			}
-
-            else if( e.NewValue == CheckState.Unchecked )
-            {
-				Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
-				if( curr != null )
-                {
-					currPizza.RemoveIngredient( curr );
+			if( Cheeses.Enabled ) {
+				if( e.NewValue == CheckState.Checked ) {
+					currIngredient = new Ingredient( Cheeses.SelectedItem.ToString(), (int)Enums.IngredientCategory.CHEESE );
+					AddToCartButton.Enabled = false;
+					Cheeses.Enabled = false;
+					CheesesAmount.Visible = true;
+					CheesesAmount.Text = Cheeses.SelectedItem.ToString() + " Amount?";
+					LessC.Checked = false;
+					NormalC.Checked = false;
+					MoreC.Checked = false;
+				} else if( e.NewValue == CheckState.Unchecked ) {
+					Ingredient curr = currPizza.Contains( Meats.SelectedItem.ToString() );
+					if( curr != null ) {
+						currPizza.RemoveIngredient( curr );
+					}
 				}
 			}
 		}
@@ -318,6 +318,9 @@ namespace Pizza_Ordering_Application {
 			currOrder.AddPizza( currPizza );
 
 			AddToCartPanel.Visible = true;
+			Meats.Enabled = false;
+			Vegetables.Enabled = false;
+			Cheeses.Enabled = false;
 
 			ItemList.Items.Clear();
 
