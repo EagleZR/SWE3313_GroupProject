@@ -141,8 +141,6 @@ namespace Pizza_Ordering_Application {
 			Cheeses.Enabled = true;
 			CheesesAmount.Visible = false;
 
-			currPizza = null;
-
 			foreach( int i in Meats.CheckedIndices )
             {
 				Meats.SetItemCheckState( i, CheckState.Unchecked );
@@ -159,6 +157,7 @@ namespace Pizza_Ordering_Application {
 			}
 
 			ItemCustomizationPanel.Visible = false;
+			currPizza = null;
 		}
 
 		private void Meats_ItemCheck( object sender, ItemCheckEventArgs e )
