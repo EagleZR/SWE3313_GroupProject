@@ -463,6 +463,7 @@
             this.CheckoutPanel.Name = "CheckoutPanel";
             this.CheckoutPanel.Size = new System.Drawing.Size(539, 643);
             this.CheckoutPanel.TabIndex = 9;
+            this.CheckoutPanel.Visible = false;
             // 
             // LogoutButton
             // 
