@@ -15,19 +15,23 @@ namespace PizzaOrderingSystem {
 
 		#region Properties
 		public string Name {
-			get { return this.name; }
+			get { return ( this.name == null ? "name uninitialized" : this.name ); }
 			set { this.name = value; }
 		}
 
 		public int Category {
 			get { return this.category; }
-			set { this.category = value; }
+			set {
+				if( Enum.IsDefined( typeof( Enums.IngredientCategory ), value ) ) {
+					this.category = value;
+				}
+			}
 		}
 
 		public int Amount {
 			get { return this.amount; }
 			set {
-				if( value >= (int)Enums.IngredientAmount.NONE && value <= (int)Enums.IngredientAmount.EXTRA ) {
+				if( Enum.IsDefined( typeof( Enums.IngredientAmount ), value ) ) {
 					this.amount = value;
 				}
 			}
@@ -61,7 +65,7 @@ namespace PizzaOrderingSystem {
 		/// Increases the amount of this ingredient, not to exceed <see cref="Enums.IngredientAmount.EXTRA"/>.
 		/// </summary>
 		protected void IncreaseAmount() {
-			if( this.amount <= (int)Enums.IngredientAmount.EXTRA ) {
+			if( Enum.IsDefined( typeof(Enums.IngredientAmount), this.amount + 1 ) ) {
 				this.amount++;
 			}
 		}
@@ -70,7 +74,7 @@ namespace PizzaOrderingSystem {
 		/// Decreases the amount of this ingredient, not to fall below <see cref="Enums.IngredientAmount.NONE"/>.
 		/// </summary>
 		protected void DecreaseAmount() {
-			if( this.amount >= (int)Enums.IngredientAmount.NONE ) {
+			if( Enum.IsDefined( typeof( Enums.IngredientAmount ), this.amount - 1 ) ) {
 				this.amount--;
 			}
 		}
@@ -80,7 +84,7 @@ namespace PizzaOrderingSystem {
 		/// </summary>
 		/// <param name="amount">Use <see cref="Enums.IngredientAmount"/>.</param>
 		public void SetAmount( int amount ) {
-			if( amount <= (int)Enums.IngredientAmount.EXTRA && amount >= (int)Enums.IngredientAmount.NONE ) {
+			if( Enum.IsDefined( typeof( Enums.IngredientAmount ), amount ) ) {
 				this.amount = amount;
 			}
 		}
@@ -102,7 +106,12 @@ namespace PizzaOrderingSystem {
 			return this.name == ingredient.name;
 		}
 
-		public bool Equals(string ingredientName) {
+		/// <summary>
+		/// Checks to see if the string parameter matches the name of this ingredient.
+		/// </summary>
+		/// <param name="ingredientName"></param>
+		/// <returns></returns>
+		protected bool Equals( string ingredientName ) {
 			return this.name == ingredientName;
 		}
 
