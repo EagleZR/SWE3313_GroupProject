@@ -106,6 +106,21 @@
             this.AddToCartButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.ItemCustomizationTitle = new System.Windows.Forms.Label();
+            this.AccountPanel = new System.Windows.Forms.Panel();
+            this.AccountLogoutButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.AccountFirstNameTBox = new System.Windows.Forms.TextBox();
+            this.AccountPasswordTBox = new System.Windows.Forms.TextBox();
+            this.AccountAddressTBox = new System.Windows.Forms.TextBox();
+            this.AccountUsernameTBox = new System.Windows.Forms.TextBox();
+            this.AccountEmailTBox = new System.Windows.Forms.TextBox();
+            this.AccountLastNameTBox = new System.Windows.Forms.TextBox();
+            this.AccountBackButton = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.LoginPage.SuspendLayout();
@@ -118,6 +133,7 @@
             this.CheesesAmount.SuspendLayout();
             this.VeggiesToppingsAmount.SuspendLayout();
             this.MeatToppingsAmount.SuspendLayout();
+            this.AccountPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoginPanel
@@ -390,9 +406,11 @@
             this.AccountButton.TabIndex = 10;
             this.AccountButton.Text = "Account";
             this.AccountButton.UseVisualStyleBackColor = true;
+            this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
             // 
             // MainMenuPanel
             // 
+            this.MainMenuPanel.Controls.Add(this.AccountPanel);
             this.MainMenuPanel.Controls.Add(this.ItemCustomizationPanel);
             this.MainMenuPanel.Controls.Add(this.AccountButton);
             this.MainMenuPanel.Controls.Add(this.CartButton);
@@ -950,6 +968,145 @@
             this.ItemCustomizationTitle.TabIndex = 0;
             this.ItemCustomizationTitle.Text = "Item Customization";
             // 
+            // AccountPanel
+            // 
+            this.AccountPanel.Controls.Add(this.AccountBackButton);
+            this.AccountPanel.Controls.Add(this.AccountLastNameTBox);
+            this.AccountPanel.Controls.Add(this.AccountEmailTBox);
+            this.AccountPanel.Controls.Add(this.AccountUsernameTBox);
+            this.AccountPanel.Controls.Add(this.AccountAddressTBox);
+            this.AccountPanel.Controls.Add(this.AccountPasswordTBox);
+            this.AccountPanel.Controls.Add(this.AccountFirstNameTBox);
+            this.AccountPanel.Controls.Add(this.label10);
+            this.AccountPanel.Controls.Add(this.label9);
+            this.AccountPanel.Controls.Add(this.label8);
+            this.AccountPanel.Controls.Add(this.label7);
+            this.AccountPanel.Controls.Add(this.label6);
+            this.AccountPanel.Controls.Add(this.label3);
+            this.AccountPanel.Controls.Add(this.AccountLogoutButton);
+            this.AccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AccountPanel.Location = new System.Drawing.Point(0, 0);
+            this.AccountPanel.Name = "AccountPanel";
+            this.AccountPanel.Size = new System.Drawing.Size(539, 643);
+            this.AccountPanel.TabIndex = 12;
+            this.AccountPanel.Visible = false;
+            // 
+            // AccountLogoutButton
+            // 
+            this.AccountLogoutButton.Location = new System.Drawing.Point(417, 40);
+            this.AccountLogoutButton.Name = "AccountLogoutButton";
+            this.AccountLogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.AccountLogoutButton.TabIndex = 0;
+            this.AccountLogoutButton.Text = "Logout";
+            this.AccountLogoutButton.UseVisualStyleBackColor = true;
+            this.AccountLogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(112, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "First Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(112, 369);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Address:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(112, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Last Name:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(112, 289);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Username:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(112, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Email:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(112, 327);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Password";
+            // 
+            // AccountFirstNameTBox
+            // 
+            this.AccountFirstNameTBox.Location = new System.Drawing.Point(210, 151);
+            this.AccountFirstNameTBox.Name = "AccountFirstNameTBox";
+            this.AccountFirstNameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountFirstNameTBox.TabIndex = 7;
+            // 
+            // AccountPasswordTBox
+            // 
+            this.AccountPasswordTBox.Location = new System.Drawing.Point(210, 324);
+            this.AccountPasswordTBox.Name = "AccountPasswordTBox";
+            this.AccountPasswordTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountPasswordTBox.TabIndex = 8;
+            // 
+            // AccountAddressTBox
+            // 
+            this.AccountAddressTBox.Location = new System.Drawing.Point(210, 371);
+            this.AccountAddressTBox.Name = "AccountAddressTBox";
+            this.AccountAddressTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountAddressTBox.TabIndex = 9;
+            // 
+            // AccountUsernameTBox
+            // 
+            this.AccountUsernameTBox.Location = new System.Drawing.Point(210, 286);
+            this.AccountUsernameTBox.Name = "AccountUsernameTBox";
+            this.AccountUsernameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountUsernameTBox.TabIndex = 10;
+            // 
+            // AccountEmailTBox
+            // 
+            this.AccountEmailTBox.Location = new System.Drawing.Point(210, 243);
+            this.AccountEmailTBox.Name = "AccountEmailTBox";
+            this.AccountEmailTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountEmailTBox.TabIndex = 11;
+            // 
+            // AccountLastNameTBox
+            // 
+            this.AccountLastNameTBox.Location = new System.Drawing.Point(210, 197);
+            this.AccountLastNameTBox.Name = "AccountLastNameTBox";
+            this.AccountLastNameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountLastNameTBox.TabIndex = 12;
+            // 
+            // AccountBackButton
+            // 
+            this.AccountBackButton.Location = new System.Drawing.Point(84, 40);
+            this.AccountBackButton.Name = "AccountBackButton";
+            this.AccountBackButton.Size = new System.Drawing.Size(75, 23);
+            this.AccountBackButton.TabIndex = 13;
+            this.AccountBackButton.Text = "Back";
+            this.AccountBackButton.UseVisualStyleBackColor = true;
+            this.AccountBackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -981,6 +1138,8 @@
             this.VeggiesToppingsAmount.PerformLayout();
             this.MeatToppingsAmount.ResumeLayout(false);
             this.MeatToppingsAmount.PerformLayout();
+            this.AccountPanel.ResumeLayout(false);
+            this.AccountPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1065,6 +1224,21 @@
         private System.Windows.Forms.Label OrderProgress;
         private System.Windows.Forms.Label OrderProgressLabel;
         private System.Windows.Forms.Label OrderCompleteLabel;
+        private System.Windows.Forms.Panel AccountPanel;
+        private System.Windows.Forms.Button AccountLogoutButton;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button AccountBackButton;
+        private System.Windows.Forms.TextBox AccountLastNameTBox;
+        private System.Windows.Forms.TextBox AccountEmailTBox;
+        private System.Windows.Forms.TextBox AccountUsernameTBox;
+        private System.Windows.Forms.TextBox AccountAddressTBox;
+        private System.Windows.Forms.TextBox AccountPasswordTBox;
+        private System.Windows.Forms.TextBox AccountFirstNameTBox;
     }
 }
 

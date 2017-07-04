@@ -137,12 +137,18 @@ namespace Pizza_Ordering_Application {
                 Cheeses.SetItemCheckState(i, CheckState.Unchecked);
             }
         }
-		#endregion
 
-		#region Item Customization Screen
-		private void BackButton_Click( object sender, EventArgs e )
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            AccountPanel.Visible = true;
+        }
+        #endregion
+
+        #region Item Customization Screen
+        private void BackButton_Click( object sender, EventArgs e )
         {
 			MainMenuPanel.Visible = true;
+            AccountPanel.Visible = false;
 			Meats.Enabled = false;
 			MeatToppingsAmount.Visible = false;
 			Vegetables.Enabled = false;
@@ -398,6 +404,7 @@ namespace Pizza_Ordering_Application {
             AddToCartPanel.Visible = false;
             ItemCustomizationPanel.Visible = false;
             MainMenuPanel.Visible = false;
+            AccountPanel.Visible = false;
 
             foreach (int i in Meats.CheckedIndices)
             {
