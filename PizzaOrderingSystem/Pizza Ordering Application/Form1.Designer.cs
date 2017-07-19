@@ -28,39 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label customerNameLabel;
+            System.Windows.Forms.Label addressLabel;
+            System.Windows.Forms.Label phoneNumberLabel;
+            System.Windows.Forms.Label emailLabel;
+            System.Windows.Forms.Label usernameLabel;
+            System.Windows.Forms.Label passwordLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.LoginPanel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.LoginPage = new System.Windows.Forms.TabPage();
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.PasswordL = new System.Windows.Forms.TextBox();
-            this.UsernameL = new System.Windows.Forms.TextBox();
-            this.PasswordLabelL = new System.Windows.Forms.Label();
-            this.UsernameLabelL = new System.Windows.Forms.Label();
-            this.RegisterPage = new System.Windows.Forms.TabPage();
-            this.LastName = new System.Windows.Forms.TextBox();
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.UsernameR = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.PasswordR = new System.Windows.Forms.TextBox();
-            this.LastNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.UsernameLabelR = new System.Windows.Forms.Label();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.RegisterButton = new System.Windows.Forms.Button();
-            this.PasswordLabelR = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SPizzaLabel = new System.Windows.Forms.Label();
-            this.LPizzaLabel = new System.Windows.Forms.Label();
-            this.MPizzaLabel = new System.Windows.Forms.Label();
-            this.OrderSPizza = new System.Windows.Forms.Button();
-            this.OrderLPizza = new System.Windows.Forms.Button();
-            this.OrderMPizza = new System.Windows.Forms.Button();
-            this.CartButton = new System.Windows.Forms.Button();
-            this.AccountButton = new System.Windows.Forms.Button();
             this.MainMenuPanel = new System.Windows.Forms.Panel();
             this.ItemCustomizationPanel = new System.Windows.Forms.Panel();
             this.AddToCartPanel = new System.Windows.Forms.Panel();
             this.CheckoutPanel = new System.Windows.Forms.Panel();
+            this.AccountPanel = new System.Windows.Forms.Panel();
+            this.AccountBackButton = new System.Windows.Forms.Button();
+            this.AccountLastNameTBox = new System.Windows.Forms.TextBox();
+            this.AccountEmailTBox = new System.Windows.Forms.TextBox();
+            this.AccountUsernameTBox = new System.Windows.Forms.TextBox();
+            this.AccountAddressTBox = new System.Windows.Forms.TextBox();
+            this.AccountPasswordTBox = new System.Windows.Forms.TextBox();
+            this.AccountFirstNameTBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AccountLogoutButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.OrderProgress = new System.Windows.Forms.Label();
             this.OrderProgressLabel = new System.Windows.Forms.Label();
@@ -106,35 +103,123 @@
             this.AddToCartButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.ItemCustomizationTitle = new System.Windows.Forms.Label();
-            this.AccountPanel = new System.Windows.Forms.Panel();
-            this.AccountLogoutButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.AccountFirstNameTBox = new System.Windows.Forms.TextBox();
-            this.AccountPasswordTBox = new System.Windows.Forms.TextBox();
-            this.AccountAddressTBox = new System.Windows.Forms.TextBox();
-            this.AccountUsernameTBox = new System.Windows.Forms.TextBox();
-            this.AccountEmailTBox = new System.Windows.Forms.TextBox();
-            this.AccountLastNameTBox = new System.Windows.Forms.TextBox();
-            this.AccountBackButton = new System.Windows.Forms.Button();
+            this.AccountButton = new System.Windows.Forms.Button();
+            this.CartButton = new System.Windows.Forms.Button();
+            this.OrderMPizza = new System.Windows.Forms.Button();
+            this.OrderLPizza = new System.Windows.Forms.Button();
+            this.OrderSPizza = new System.Windows.Forms.Button();
+            this.MPizzaLabel = new System.Windows.Forms.Label();
+            this.LPizzaLabel = new System.Windows.Forms.Label();
+            this.SPizzaLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.PasswordL = new System.Windows.Forms.TextBox();
+            this.UsernameL = new System.Windows.Forms.TextBox();
+            this.PasswordLabelL = new System.Windows.Forms.Label();
+            this.UsernameLabelL = new System.Windows.Forms.Label();
+            this.RegisterPage = new System.Windows.Forms.TabPage();
+            this.customerNameTextBox = new System.Windows.Forms.TextBox();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerInformationDataSet = new Pizza_Ordering_Application.CustomerInformationDataSet();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.RegisterButton = new System.Windows.Forms.Button();
+            this.customerTableAdapter = new Pizza_Ordering_Application.CustomerInformationDataSetTableAdapters.CustomerTableAdapter();
+            this.tableAdapterManager = new Pizza_Ordering_Application.CustomerInformationDataSetTableAdapters.TableAdapterManager();
+            this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.customerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            customerNameLabel = new System.Windows.Forms.Label();
+            addressLabel = new System.Windows.Forms.Label();
+            phoneNumberLabel = new System.Windows.Forms.Label();
+            emailLabel = new System.Windows.Forms.Label();
+            usernameLabel = new System.Windows.Forms.Label();
+            passwordLabel = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.LoginPage.SuspendLayout();
-            this.RegisterPage.SuspendLayout();
             this.MainMenuPanel.SuspendLayout();
             this.ItemCustomizationPanel.SuspendLayout();
             this.AddToCartPanel.SuspendLayout();
             this.CheckoutPanel.SuspendLayout();
+            this.AccountPanel.SuspendLayout();
             this.CreditCardInfo.SuspendLayout();
             this.CheesesAmount.SuspendLayout();
             this.VeggiesToppingsAmount.SuspendLayout();
             this.MeatToppingsAmount.SuspendLayout();
-            this.AccountPanel.SuspendLayout();
+            this.RegisterPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerInformationDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).BeginInit();
+            this.customerBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // customerNameLabel
+            // 
+            customerNameLabel.AutoSize = true;
+            customerNameLabel.Location = new System.Drawing.Point(73, 202);
+            customerNameLabel.Name = "customerNameLabel";
+            customerNameLabel.Size = new System.Drawing.Size(38, 13);
+            customerNameLabel.TabIndex = 9;
+            customerNameLabel.Text = "Name:";
+            // 
+            // addressLabel
+            // 
+            addressLabel.AutoSize = true;
+            addressLabel.Location = new System.Drawing.Point(73, 228);
+            addressLabel.Name = "addressLabel";
+            addressLabel.Size = new System.Drawing.Size(48, 13);
+            addressLabel.TabIndex = 11;
+            addressLabel.Text = "Address:";
+            // 
+            // phoneNumberLabel
+            // 
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Location = new System.Drawing.Point(73, 254);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
+            phoneNumberLabel.TabIndex = 13;
+            phoneNumberLabel.Text = "Phone Number:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(73, 284);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 19;
+            emailLabel.Text = "Email:";
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Location = new System.Drawing.Point(73, 310);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new System.Drawing.Size(58, 13);
+            usernameLabel.TabIndex = 21;
+            usernameLabel.Text = "Username:";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(73, 336);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(56, 13);
+            passwordLabel.TabIndex = 23;
+            passwordLabel.Text = "Password:";
             // 
             // LoginPanel
             // 
@@ -142,14 +227,15 @@
             this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginPanel.Location = new System.Drawing.Point(0, 0);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(539, 643);
+            this.LoginPanel.Size = new System.Drawing.Size(539, 585);
             this.LoginPanel.TabIndex = 0;
+            this.LoginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginPanel_Paint);
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.LoginPage);
             this.tabControl.Controls.Add(this.RegisterPage);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Location = new System.Drawing.Point(3, 21);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(515, 619);
@@ -157,6 +243,7 @@
             // 
             // LoginPage
             // 
+            this.LoginPage.Controls.Add(this.MainMenuPanel);
             this.LoginPage.Controls.Add(this.LoginButton);
             this.LoginPage.Controls.Add(this.PasswordL);
             this.LoginPage.Controls.Add(this.UsernameL);
@@ -169,248 +256,8 @@
             this.LoginPage.TabIndex = 0;
             this.LoginPage.Text = "Login";
             // 
-            // LoginButton
-            // 
-            this.LoginButton.Location = new System.Drawing.Point(219, 512);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 4;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // PasswordL
-            // 
-            this.PasswordL.Location = new System.Drawing.Point(244, 449);
-            this.PasswordL.Name = "PasswordL";
-            this.PasswordL.Size = new System.Drawing.Size(100, 20);
-            this.PasswordL.TabIndex = 3;
-            // 
-            // UsernameL
-            // 
-            this.UsernameL.Location = new System.Drawing.Point(244, 394);
-            this.UsernameL.Name = "UsernameL";
-            this.UsernameL.Size = new System.Drawing.Size(100, 20);
-            this.UsernameL.TabIndex = 2;
-            // 
-            // PasswordLabelL
-            // 
-            this.PasswordLabelL.AutoSize = true;
-            this.PasswordLabelL.Location = new System.Drawing.Point(164, 449);
-            this.PasswordLabelL.Name = "PasswordLabelL";
-            this.PasswordLabelL.Size = new System.Drawing.Size(56, 13);
-            this.PasswordLabelL.TabIndex = 1;
-            this.PasswordLabelL.Text = "Password:";
-            // 
-            // UsernameLabelL
-            // 
-            this.UsernameLabelL.AutoSize = true;
-            this.UsernameLabelL.Location = new System.Drawing.Point(164, 394);
-            this.UsernameLabelL.Name = "UsernameLabelL";
-            this.UsernameLabelL.Size = new System.Drawing.Size(58, 13);
-            this.UsernameLabelL.TabIndex = 0;
-            this.UsernameLabelL.Text = "Username:";
-            // 
-            // RegisterPage
-            // 
-            this.RegisterPage.Controls.Add(this.LastName);
-            this.RegisterPage.Controls.Add(this.FirstName);
-            this.RegisterPage.Controls.Add(this.UsernameR);
-            this.RegisterPage.Controls.Add(this.Email);
-            this.RegisterPage.Controls.Add(this.PasswordR);
-            this.RegisterPage.Controls.Add(this.LastNameLabel);
-            this.RegisterPage.Controls.Add(this.FirstNameLabel);
-            this.RegisterPage.Controls.Add(this.UsernameLabelR);
-            this.RegisterPage.Controls.Add(this.EmailLabel);
-            this.RegisterPage.Controls.Add(this.RegisterButton);
-            this.RegisterPage.Controls.Add(this.PasswordLabelR);
-            this.RegisterPage.Location = new System.Drawing.Point(4, 22);
-            this.RegisterPage.Name = "RegisterPage";
-            this.RegisterPage.Padding = new System.Windows.Forms.Padding(3);
-            this.RegisterPage.Size = new System.Drawing.Size(507, 593);
-            this.RegisterPage.TabIndex = 1;
-            this.RegisterPage.Text = "Register";
-            // 
-            // LastName
-            // 
-            this.LastName.Location = new System.Drawing.Point(254, 296);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(100, 20);
-            this.LastName.TabIndex = 17;
-            // 
-            // FirstName
-            // 
-            this.FirstName.Location = new System.Drawing.Point(254, 241);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(100, 20);
-            this.FirstName.TabIndex = 16;
-            // 
-            // UsernameR
-            // 
-            this.UsernameR.Location = new System.Drawing.Point(254, 405);
-            this.UsernameR.Name = "UsernameR";
-            this.UsernameR.Size = new System.Drawing.Size(100, 20);
-            this.UsernameR.TabIndex = 13;
-            // 
-            // Email
-            // 
-            this.Email.Location = new System.Drawing.Point(254, 350);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(100, 20);
-            this.Email.TabIndex = 12;
-            // 
-            // PasswordR
-            // 
-            this.PasswordR.Location = new System.Drawing.Point(254, 453);
-            this.PasswordR.Name = "PasswordR";
-            this.PasswordR.Size = new System.Drawing.Size(100, 20);
-            this.PasswordR.TabIndex = 7;
-            // 
-            // LastNameLabel
-            // 
-            this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(174, 296);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(61, 13);
-            this.LastNameLabel.TabIndex = 15;
-            this.LastNameLabel.Text = "Last Name:";
-            // 
-            // FirstNameLabel
-            // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(174, 241);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(60, 13);
-            this.FirstNameLabel.TabIndex = 14;
-            this.FirstNameLabel.Text = "First Name:";
-            // 
-            // UsernameLabelR
-            // 
-            this.UsernameLabelR.AutoSize = true;
-            this.UsernameLabelR.Location = new System.Drawing.Point(174, 405);
-            this.UsernameLabelR.Name = "UsernameLabelR";
-            this.UsernameLabelR.Size = new System.Drawing.Size(58, 13);
-            this.UsernameLabelR.TabIndex = 11;
-            this.UsernameLabelR.Text = "Username:";
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(174, 350);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabel.TabIndex = 10;
-            this.EmailLabel.Text = "Email:";
-            // 
-            // RegisterButton
-            // 
-            this.RegisterButton.Location = new System.Drawing.Point(219, 515);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(75, 23);
-            this.RegisterButton.TabIndex = 9;
-            this.RegisterButton.Text = "Register";
-            this.RegisterButton.UseVisualStyleBackColor = true;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
-            // 
-            // PasswordLabelR
-            // 
-            this.PasswordLabelR.AutoSize = true;
-            this.PasswordLabelR.Location = new System.Drawing.Point(174, 453);
-            this.PasswordLabelR.Name = "PasswordLabelR";
-            this.PasswordLabelR.Size = new System.Drawing.Size(56, 13);
-            this.PasswordLabelR.TabIndex = 5;
-            this.PasswordLabelR.Text = "Password:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Main Menu";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // SPizzaLabel
-            // 
-            this.SPizzaLabel.AutoSize = true;
-            this.SPizzaLabel.Location = new System.Drawing.Point(155, 267);
-            this.SPizzaLabel.Name = "SPizzaLabel";
-            this.SPizzaLabel.Size = new System.Drawing.Size(60, 13);
-            this.SPizzaLabel.TabIndex = 3;
-            this.SPizzaLabel.Text = "Small Pizza";
-            // 
-            // LPizzaLabel
-            // 
-            this.LPizzaLabel.AutoSize = true;
-            this.LPizzaLabel.Location = new System.Drawing.Point(152, 374);
-            this.LPizzaLabel.Name = "LPizzaLabel";
-            this.LPizzaLabel.Size = new System.Drawing.Size(62, 13);
-            this.LPizzaLabel.TabIndex = 4;
-            this.LPizzaLabel.Text = "Large Pizza";
-            // 
-            // MPizzaLabel
-            // 
-            this.MPizzaLabel.AutoSize = true;
-            this.MPizzaLabel.Location = new System.Drawing.Point(152, 322);
-            this.MPizzaLabel.Name = "MPizzaLabel";
-            this.MPizzaLabel.Size = new System.Drawing.Size(72, 13);
-            this.MPizzaLabel.TabIndex = 5;
-            this.MPizzaLabel.Text = "Medium Pizza";
-            // 
-            // OrderSPizza
-            // 
-            this.OrderSPizza.Location = new System.Drawing.Point(285, 262);
-            this.OrderSPizza.Name = "OrderSPizza";
-            this.OrderSPizza.Size = new System.Drawing.Size(75, 23);
-            this.OrderSPizza.TabIndex = 6;
-            this.OrderSPizza.Text = "Order Now";
-            this.OrderSPizza.UseVisualStyleBackColor = true;
-            this.OrderSPizza.Click += new System.EventHandler(this.OrderSPizza_Click);
-            // 
-            // OrderLPizza
-            // 
-            this.OrderLPizza.Location = new System.Drawing.Point(285, 369);
-            this.OrderLPizza.Name = "OrderLPizza";
-            this.OrderLPizza.Size = new System.Drawing.Size(75, 23);
-            this.OrderLPizza.TabIndex = 7;
-            this.OrderLPizza.Text = "Order Now";
-            this.OrderLPizza.UseVisualStyleBackColor = true;
-            this.OrderLPizza.Click += new System.EventHandler(this.OrderLPizza_Click);
-            // 
-            // OrderMPizza
-            // 
-            this.OrderMPizza.Location = new System.Drawing.Point(285, 317);
-            this.OrderMPizza.Name = "OrderMPizza";
-            this.OrderMPizza.Size = new System.Drawing.Size(75, 23);
-            this.OrderMPizza.TabIndex = 8;
-            this.OrderMPizza.Text = "Order Now";
-            this.OrderMPizza.UseVisualStyleBackColor = true;
-            this.OrderMPizza.Click += new System.EventHandler(this.OrderMPizza_Click);
-            // 
-            // CartButton
-            // 
-            this.CartButton.Location = new System.Drawing.Point(380, 94);
-            this.CartButton.Name = "CartButton";
-            this.CartButton.Size = new System.Drawing.Size(75, 23);
-            this.CartButton.TabIndex = 9;
-            this.CartButton.Text = "Cart";
-            this.CartButton.UseVisualStyleBackColor = true;
-            this.CartButton.Click += new System.EventHandler(this.CartButton_Click);
-            // 
-            // AccountButton
-            // 
-            this.AccountButton.Location = new System.Drawing.Point(84, 94);
-            this.AccountButton.Name = "AccountButton";
-            this.AccountButton.Size = new System.Drawing.Size(75, 23);
-            this.AccountButton.TabIndex = 10;
-            this.AccountButton.Text = "Account";
-            this.AccountButton.UseVisualStyleBackColor = true;
-            this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
-            // 
             // MainMenuPanel
             // 
-            this.MainMenuPanel.Controls.Add(this.AccountPanel);
             this.MainMenuPanel.Controls.Add(this.ItemCustomizationPanel);
             this.MainMenuPanel.Controls.Add(this.AccountButton);
             this.MainMenuPanel.Controls.Add(this.CartButton);
@@ -422,9 +269,9 @@
             this.MainMenuPanel.Controls.Add(this.SPizzaLabel);
             this.MainMenuPanel.Controls.Add(this.label1);
             this.MainMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuPanel.Location = new System.Drawing.Point(3, 3);
             this.MainMenuPanel.Name = "MainMenuPanel";
-            this.MainMenuPanel.Size = new System.Drawing.Size(539, 643);
+            this.MainMenuPanel.Size = new System.Drawing.Size(501, 587);
             this.MainMenuPanel.TabIndex = 2;
             this.MainMenuPanel.Visible = false;
             // 
@@ -447,7 +294,7 @@
             this.ItemCustomizationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ItemCustomizationPanel.Location = new System.Drawing.Point(0, 0);
             this.ItemCustomizationPanel.Name = "ItemCustomizationPanel";
-            this.ItemCustomizationPanel.Size = new System.Drawing.Size(539, 643);
+            this.ItemCustomizationPanel.Size = new System.Drawing.Size(501, 587);
             this.ItemCustomizationPanel.TabIndex = 11;
             this.ItemCustomizationPanel.Visible = false;
             // 
@@ -466,12 +313,13 @@
             this.AddToCartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddToCartPanel.Location = new System.Drawing.Point(0, 0);
             this.AddToCartPanel.Name = "AddToCartPanel";
-            this.AddToCartPanel.Size = new System.Drawing.Size(539, 643);
+            this.AddToCartPanel.Size = new System.Drawing.Size(501, 587);
             this.AddToCartPanel.TabIndex = 24;
             this.AddToCartPanel.Visible = false;
             // 
             // CheckoutPanel
             // 
+            this.CheckoutPanel.Controls.Add(this.AccountPanel);
             this.CheckoutPanel.Controls.Add(this.LogoutButton);
             this.CheckoutPanel.Controls.Add(this.OrderProgress);
             this.CheckoutPanel.Controls.Add(this.OrderProgressLabel);
@@ -479,9 +327,147 @@
             this.CheckoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckoutPanel.Location = new System.Drawing.Point(0, 0);
             this.CheckoutPanel.Name = "CheckoutPanel";
-            this.CheckoutPanel.Size = new System.Drawing.Size(539, 643);
+            this.CheckoutPanel.Size = new System.Drawing.Size(501, 587);
             this.CheckoutPanel.TabIndex = 9;
             this.CheckoutPanel.Visible = false;
+            // 
+            // AccountPanel
+            // 
+            this.AccountPanel.Controls.Add(this.AccountBackButton);
+            this.AccountPanel.Controls.Add(this.AccountLastNameTBox);
+            this.AccountPanel.Controls.Add(this.AccountEmailTBox);
+            this.AccountPanel.Controls.Add(this.AccountUsernameTBox);
+            this.AccountPanel.Controls.Add(this.AccountAddressTBox);
+            this.AccountPanel.Controls.Add(this.AccountPasswordTBox);
+            this.AccountPanel.Controls.Add(this.AccountFirstNameTBox);
+            this.AccountPanel.Controls.Add(this.label10);
+            this.AccountPanel.Controls.Add(this.label9);
+            this.AccountPanel.Controls.Add(this.label8);
+            this.AccountPanel.Controls.Add(this.label7);
+            this.AccountPanel.Controls.Add(this.label6);
+            this.AccountPanel.Controls.Add(this.label3);
+            this.AccountPanel.Controls.Add(this.AccountLogoutButton);
+            this.AccountPanel.Location = new System.Drawing.Point(518, 65);
+            this.AccountPanel.Name = "AccountPanel";
+            this.AccountPanel.Size = new System.Drawing.Size(539, 643);
+            this.AccountPanel.TabIndex = 12;
+            this.AccountPanel.Visible = false;
+            // 
+            // AccountBackButton
+            // 
+            this.AccountBackButton.Location = new System.Drawing.Point(84, 40);
+            this.AccountBackButton.Name = "AccountBackButton";
+            this.AccountBackButton.Size = new System.Drawing.Size(75, 23);
+            this.AccountBackButton.TabIndex = 13;
+            this.AccountBackButton.Text = "Back";
+            this.AccountBackButton.UseVisualStyleBackColor = true;
+            this.AccountBackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // AccountLastNameTBox
+            // 
+            this.AccountLastNameTBox.Location = new System.Drawing.Point(210, 197);
+            this.AccountLastNameTBox.Name = "AccountLastNameTBox";
+            this.AccountLastNameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountLastNameTBox.TabIndex = 12;
+            // 
+            // AccountEmailTBox
+            // 
+            this.AccountEmailTBox.Location = new System.Drawing.Point(210, 243);
+            this.AccountEmailTBox.Name = "AccountEmailTBox";
+            this.AccountEmailTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountEmailTBox.TabIndex = 11;
+            // 
+            // AccountUsernameTBox
+            // 
+            this.AccountUsernameTBox.Location = new System.Drawing.Point(210, 286);
+            this.AccountUsernameTBox.Name = "AccountUsernameTBox";
+            this.AccountUsernameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountUsernameTBox.TabIndex = 10;
+            // 
+            // AccountAddressTBox
+            // 
+            this.AccountAddressTBox.Location = new System.Drawing.Point(210, 371);
+            this.AccountAddressTBox.Name = "AccountAddressTBox";
+            this.AccountAddressTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountAddressTBox.TabIndex = 9;
+            // 
+            // AccountPasswordTBox
+            // 
+            this.AccountPasswordTBox.Location = new System.Drawing.Point(210, 324);
+            this.AccountPasswordTBox.Name = "AccountPasswordTBox";
+            this.AccountPasswordTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountPasswordTBox.TabIndex = 8;
+            // 
+            // AccountFirstNameTBox
+            // 
+            this.AccountFirstNameTBox.Location = new System.Drawing.Point(210, 151);
+            this.AccountFirstNameTBox.Name = "AccountFirstNameTBox";
+            this.AccountFirstNameTBox.Size = new System.Drawing.Size(282, 20);
+            this.AccountFirstNameTBox.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(112, 327);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Password";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(112, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Email:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(112, 289);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Username:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(112, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Last Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(112, 369);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Address:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(112, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "First Name:";
+            // 
+            // AccountLogoutButton
+            // 
+            this.AccountLogoutButton.Location = new System.Drawing.Point(417, 40);
+            this.AccountLogoutButton.Name = "AccountLogoutButton";
+            this.AccountLogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.AccountLogoutButton.TabIndex = 0;
+            this.AccountLogoutButton.Text = "Logout";
+            this.AccountLogoutButton.UseVisualStyleBackColor = true;
+            this.AccountLogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // LogoutButton
             // 
@@ -968,160 +954,376 @@
             this.ItemCustomizationTitle.TabIndex = 0;
             this.ItemCustomizationTitle.Text = "Item Customization";
             // 
-            // AccountPanel
+            // AccountButton
             // 
-            this.AccountPanel.Controls.Add(this.AccountBackButton);
-            this.AccountPanel.Controls.Add(this.AccountLastNameTBox);
-            this.AccountPanel.Controls.Add(this.AccountEmailTBox);
-            this.AccountPanel.Controls.Add(this.AccountUsernameTBox);
-            this.AccountPanel.Controls.Add(this.AccountAddressTBox);
-            this.AccountPanel.Controls.Add(this.AccountPasswordTBox);
-            this.AccountPanel.Controls.Add(this.AccountFirstNameTBox);
-            this.AccountPanel.Controls.Add(this.label10);
-            this.AccountPanel.Controls.Add(this.label9);
-            this.AccountPanel.Controls.Add(this.label8);
-            this.AccountPanel.Controls.Add(this.label7);
-            this.AccountPanel.Controls.Add(this.label6);
-            this.AccountPanel.Controls.Add(this.label3);
-            this.AccountPanel.Controls.Add(this.AccountLogoutButton);
-            this.AccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AccountPanel.Location = new System.Drawing.Point(0, 0);
-            this.AccountPanel.Name = "AccountPanel";
-            this.AccountPanel.Size = new System.Drawing.Size(539, 643);
-            this.AccountPanel.TabIndex = 12;
-            this.AccountPanel.Visible = false;
+            this.AccountButton.Location = new System.Drawing.Point(84, 94);
+            this.AccountButton.Name = "AccountButton";
+            this.AccountButton.Size = new System.Drawing.Size(75, 23);
+            this.AccountButton.TabIndex = 10;
+            this.AccountButton.Text = "Account";
+            this.AccountButton.UseVisualStyleBackColor = true;
+            this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
             // 
-            // AccountLogoutButton
+            // CartButton
             // 
-            this.AccountLogoutButton.Location = new System.Drawing.Point(417, 40);
-            this.AccountLogoutButton.Name = "AccountLogoutButton";
-            this.AccountLogoutButton.Size = new System.Drawing.Size(75, 23);
-            this.AccountLogoutButton.TabIndex = 0;
-            this.AccountLogoutButton.Text = "Logout";
-            this.AccountLogoutButton.UseVisualStyleBackColor = true;
-            this.AccountLogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            this.CartButton.Location = new System.Drawing.Point(380, 94);
+            this.CartButton.Name = "CartButton";
+            this.CartButton.Size = new System.Drawing.Size(75, 23);
+            this.CartButton.TabIndex = 9;
+            this.CartButton.Text = "Cart";
+            this.CartButton.UseVisualStyleBackColor = true;
+            this.CartButton.Click += new System.EventHandler(this.CartButton_Click);
             // 
-            // label3
+            // OrderMPizza
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "First Name:";
+            this.OrderMPizza.Location = new System.Drawing.Point(285, 317);
+            this.OrderMPizza.Name = "OrderMPizza";
+            this.OrderMPizza.Size = new System.Drawing.Size(75, 23);
+            this.OrderMPizza.TabIndex = 8;
+            this.OrderMPizza.Text = "Order Now";
+            this.OrderMPizza.UseVisualStyleBackColor = true;
+            this.OrderMPizza.Click += new System.EventHandler(this.OrderMPizza_Click);
             // 
-            // label6
+            // OrderLPizza
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 369);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Address:";
+            this.OrderLPizza.Location = new System.Drawing.Point(285, 369);
+            this.OrderLPizza.Name = "OrderLPizza";
+            this.OrderLPizza.Size = new System.Drawing.Size(75, 23);
+            this.OrderLPizza.TabIndex = 7;
+            this.OrderLPizza.Text = "Order Now";
+            this.OrderLPizza.UseVisualStyleBackColor = true;
+            this.OrderLPizza.Click += new System.EventHandler(this.OrderLPizza_Click);
             // 
-            // label7
+            // OrderSPizza
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(112, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Last Name:";
+            this.OrderSPizza.Location = new System.Drawing.Point(285, 262);
+            this.OrderSPizza.Name = "OrderSPizza";
+            this.OrderSPizza.Size = new System.Drawing.Size(75, 23);
+            this.OrderSPizza.TabIndex = 6;
+            this.OrderSPizza.Text = "Order Now";
+            this.OrderSPizza.UseVisualStyleBackColor = true;
+            this.OrderSPizza.Click += new System.EventHandler(this.OrderSPizza_Click);
             // 
-            // label8
+            // MPizzaLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(112, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Username:";
+            this.MPizzaLabel.AutoSize = true;
+            this.MPizzaLabel.Location = new System.Drawing.Point(152, 322);
+            this.MPizzaLabel.Name = "MPizzaLabel";
+            this.MPizzaLabel.Size = new System.Drawing.Size(72, 13);
+            this.MPizzaLabel.TabIndex = 5;
+            this.MPizzaLabel.Text = "Medium Pizza";
             // 
-            // label9
+            // LPizzaLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(112, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Email:";
+            this.LPizzaLabel.AutoSize = true;
+            this.LPizzaLabel.Location = new System.Drawing.Point(152, 374);
+            this.LPizzaLabel.Name = "LPizzaLabel";
+            this.LPizzaLabel.Size = new System.Drawing.Size(62, 13);
+            this.LPizzaLabel.TabIndex = 4;
+            this.LPizzaLabel.Text = "Large Pizza";
             // 
-            // label10
+            // SPizzaLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(112, 327);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Password";
+            this.SPizzaLabel.AutoSize = true;
+            this.SPizzaLabel.Location = new System.Drawing.Point(155, 267);
+            this.SPizzaLabel.Name = "SPizzaLabel";
+            this.SPizzaLabel.Size = new System.Drawing.Size(60, 13);
+            this.SPizzaLabel.TabIndex = 3;
+            this.SPizzaLabel.Text = "Small Pizza";
             // 
-            // AccountFirstNameTBox
+            // label1
             // 
-            this.AccountFirstNameTBox.Location = new System.Drawing.Point(210, 151);
-            this.AccountFirstNameTBox.Name = "AccountFirstNameTBox";
-            this.AccountFirstNameTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountFirstNameTBox.TabIndex = 7;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(232, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Main Menu";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // AccountPasswordTBox
+            // LoginButton
             // 
-            this.AccountPasswordTBox.Location = new System.Drawing.Point(210, 324);
-            this.AccountPasswordTBox.Name = "AccountPasswordTBox";
-            this.AccountPasswordTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountPasswordTBox.TabIndex = 8;
+            this.LoginButton.Location = new System.Drawing.Point(219, 512);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.TabIndex = 4;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // AccountAddressTBox
+            // PasswordL
             // 
-            this.AccountAddressTBox.Location = new System.Drawing.Point(210, 371);
-            this.AccountAddressTBox.Name = "AccountAddressTBox";
-            this.AccountAddressTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountAddressTBox.TabIndex = 9;
+            this.PasswordL.Location = new System.Drawing.Point(244, 449);
+            this.PasswordL.Name = "PasswordL";
+            this.PasswordL.Size = new System.Drawing.Size(100, 20);
+            this.PasswordL.TabIndex = 3;
             // 
-            // AccountUsernameTBox
+            // UsernameL
             // 
-            this.AccountUsernameTBox.Location = new System.Drawing.Point(210, 286);
-            this.AccountUsernameTBox.Name = "AccountUsernameTBox";
-            this.AccountUsernameTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountUsernameTBox.TabIndex = 10;
+            this.UsernameL.Location = new System.Drawing.Point(244, 394);
+            this.UsernameL.Name = "UsernameL";
+            this.UsernameL.Size = new System.Drawing.Size(100, 20);
+            this.UsernameL.TabIndex = 2;
             // 
-            // AccountEmailTBox
+            // PasswordLabelL
             // 
-            this.AccountEmailTBox.Location = new System.Drawing.Point(210, 243);
-            this.AccountEmailTBox.Name = "AccountEmailTBox";
-            this.AccountEmailTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountEmailTBox.TabIndex = 11;
+            this.PasswordLabelL.AutoSize = true;
+            this.PasswordLabelL.Location = new System.Drawing.Point(164, 449);
+            this.PasswordLabelL.Name = "PasswordLabelL";
+            this.PasswordLabelL.Size = new System.Drawing.Size(56, 13);
+            this.PasswordLabelL.TabIndex = 1;
+            this.PasswordLabelL.Text = "Password:";
             // 
-            // AccountLastNameTBox
+            // UsernameLabelL
             // 
-            this.AccountLastNameTBox.Location = new System.Drawing.Point(210, 197);
-            this.AccountLastNameTBox.Name = "AccountLastNameTBox";
-            this.AccountLastNameTBox.Size = new System.Drawing.Size(282, 20);
-            this.AccountLastNameTBox.TabIndex = 12;
+            this.UsernameLabelL.AutoSize = true;
+            this.UsernameLabelL.Location = new System.Drawing.Point(164, 394);
+            this.UsernameLabelL.Name = "UsernameLabelL";
+            this.UsernameLabelL.Size = new System.Drawing.Size(58, 13);
+            this.UsernameLabelL.TabIndex = 0;
+            this.UsernameLabelL.Text = "Username:";
             // 
-            // AccountBackButton
+            // RegisterPage
             // 
-            this.AccountBackButton.Location = new System.Drawing.Point(84, 40);
-            this.AccountBackButton.Name = "AccountBackButton";
-            this.AccountBackButton.Size = new System.Drawing.Size(75, 23);
-            this.AccountBackButton.TabIndex = 13;
-            this.AccountBackButton.Text = "Back";
-            this.AccountBackButton.UseVisualStyleBackColor = true;
-            this.AccountBackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.RegisterPage.Controls.Add(customerNameLabel);
+            this.RegisterPage.Controls.Add(this.customerNameTextBox);
+            this.RegisterPage.Controls.Add(addressLabel);
+            this.RegisterPage.Controls.Add(this.addressTextBox);
+            this.RegisterPage.Controls.Add(phoneNumberLabel);
+            this.RegisterPage.Controls.Add(this.phoneNumberTextBox);
+            this.RegisterPage.Controls.Add(emailLabel);
+            this.RegisterPage.Controls.Add(this.emailTextBox);
+            this.RegisterPage.Controls.Add(usernameLabel);
+            this.RegisterPage.Controls.Add(this.usernameTextBox);
+            this.RegisterPage.Controls.Add(passwordLabel);
+            this.RegisterPage.Controls.Add(this.passwordTextBox);
+            this.RegisterPage.Controls.Add(this.RegisterButton);
+            this.RegisterPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegisterPage.Location = new System.Drawing.Point(4, 22);
+            this.RegisterPage.Name = "RegisterPage";
+            this.RegisterPage.Padding = new System.Windows.Forms.Padding(3);
+            this.RegisterPage.Size = new System.Drawing.Size(507, 593);
+            this.RegisterPage.TabIndex = 1;
+            this.RegisterPage.Text = "Register";
+            // 
+            // customerNameTextBox
+            // 
+            this.customerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CustomerName", true));
+            this.customerNameTextBox.Location = new System.Drawing.Point(164, 199);
+            this.customerNameTextBox.Name = "customerNameTextBox";
+            this.customerNameTextBox.Size = new System.Drawing.Size(264, 20);
+            this.customerNameTextBox.TabIndex = 10;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.customerInformationDataSet;
+            // 
+            // customerInformationDataSet
+            // 
+            this.customerInformationDataSet.DataSetName = "CustomerInformationDataSet";
+            this.customerInformationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addressTextBox
+            // 
+            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Address", true));
+            this.addressTextBox.Location = new System.Drawing.Point(164, 225);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(264, 20);
+            this.addressTextBox.TabIndex = 12;
+            // 
+            // phoneNumberTextBox
+            // 
+            this.phoneNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "PhoneNumber", true));
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(164, 251);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(264, 20);
+            this.phoneNumberTextBox.TabIndex = 14;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(164, 281);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(264, 20);
+            this.emailTextBox.TabIndex = 20;
+            // 
+            // usernameTextBox
+            // 
+            this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Username", true));
+            this.usernameTextBox.Location = new System.Drawing.Point(164, 307);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(264, 20);
+            this.usernameTextBox.TabIndex = 22;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Password", true));
+            this.passwordTextBox.Location = new System.Drawing.Point(164, 333);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(264, 20);
+            this.passwordTextBox.TabIndex = 24;
+            // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Location = new System.Drawing.Point(251, 413);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(75, 23);
+            this.RegisterButton.TabIndex = 9;
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CreditCardsTableAdapter = null;
+            this.tableAdapterManager.CustomerTableAdapter = this.customerTableAdapter;
+            this.tableAdapterManager.OrdersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Pizza_Ordering_Application.CustomerInformationDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // customerBindingNavigator
+            // 
+            this.customerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.customerBindingNavigator.BindingSource = this.customerBindingSource;
+            this.customerBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.customerBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.customerBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.customerBindingNavigatorSaveItem});
+            this.customerBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.customerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.customerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.customerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.customerBindingNavigator.Name = "customerBindingNavigator";
+            this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.customerBindingNavigator.Size = new System.Drawing.Size(539, 25);
+            this.customerBindingNavigator.TabIndex = 1;
+            this.customerBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // customerBindingNavigatorSaveItem
+            // 
+            this.customerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.customerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("customerBindingNavigatorSaveItem.Image")));
+            this.customerBindingNavigatorSaveItem.Name = "customerBindingNavigatorSaveItem";
+            this.customerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.customerBindingNavigatorSaveItem.Text = "Save Data";
+            this.customerBindingNavigatorSaveItem.Click += new System.EventHandler(this.customerBindingNavigatorSaveItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 643);
-            this.Controls.Add(this.MainMenuPanel);
+            this.ClientSize = new System.Drawing.Size(539, 585);
+            this.Controls.Add(this.customerBindingNavigator);
             this.Controls.Add(this.LoginPanel);
             this.Name = "Form1";
             this.Text = "Pizza Ordering Application";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.LoginPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
-            this.RegisterPage.ResumeLayout(false);
-            this.RegisterPage.PerformLayout();
             this.MainMenuPanel.ResumeLayout(false);
             this.MainMenuPanel.PerformLayout();
             this.ItemCustomizationPanel.ResumeLayout(false);
@@ -1130,6 +1332,8 @@
             this.AddToCartPanel.PerformLayout();
             this.CheckoutPanel.ResumeLayout(false);
             this.CheckoutPanel.PerformLayout();
+            this.AccountPanel.ResumeLayout(false);
+            this.AccountPanel.PerformLayout();
             this.CreditCardInfo.ResumeLayout(false);
             this.CreditCardInfo.PerformLayout();
             this.CheesesAmount.ResumeLayout(false);
@@ -1138,9 +1342,15 @@
             this.VeggiesToppingsAmount.PerformLayout();
             this.MeatToppingsAmount.ResumeLayout(false);
             this.MeatToppingsAmount.PerformLayout();
-            this.AccountPanel.ResumeLayout(false);
-            this.AccountPanel.PerformLayout();
+            this.RegisterPage.ResumeLayout(false);
+            this.RegisterPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerInformationDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).EndInit();
+            this.customerBindingNavigator.ResumeLayout(false);
+            this.customerBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1155,17 +1365,7 @@
         private System.Windows.Forms.Label PasswordLabelL;
         private System.Windows.Forms.Label UsernameLabelL;
         private System.Windows.Forms.TabPage RegisterPage;
-        private System.Windows.Forms.TextBox LastName;
-        private System.Windows.Forms.TextBox FirstName;
-        private System.Windows.Forms.TextBox UsernameR;
-        private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.TextBox PasswordR;
-        private System.Windows.Forms.Label LastNameLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Label UsernameLabelR;
-        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Button RegisterButton;
-        private System.Windows.Forms.Label PasswordLabelR;
         private System.Windows.Forms.Panel MainMenuPanel;
         private System.Windows.Forms.Button AccountButton;
         private System.Windows.Forms.Button CartButton;
@@ -1239,6 +1439,29 @@
         private System.Windows.Forms.TextBox AccountAddressTBox;
         private System.Windows.Forms.TextBox AccountPasswordTBox;
         private System.Windows.Forms.TextBox AccountFirstNameTBox;
+        private CustomerInformationDataSet customerInformationDataSet;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private CustomerInformationDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
+        private CustomerInformationDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator customerBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton customerBindingNavigatorSaveItem;
+        private System.Windows.Forms.TextBox customerNameTextBox;
+        private System.Windows.Forms.TextBox addressTextBox;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
     }
 }
 

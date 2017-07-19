@@ -32,11 +32,12 @@ namespace Pizza_Ordering_Application {
         {
 			if ( tabControl.SelectedTab == LoginPage )
             {
-				FirstName.Clear();
-				LastName.Clear();
-				Email.Clear();
-				UsernameR.Clear();
-				PasswordR.Clear();
+                //I get errors when I uncomment this
+                // FirstName.Clear();
+                //LastName.Clear();
+				//Email.Clear();
+				//UsernameR.Clear();
+				//PasswordR.Clear();
 			}
             else if( tabControl.SelectedTab == RegisterPage )
             {
@@ -423,5 +424,25 @@ namespace Pizza_Ordering_Application {
         }
 
         #endregion
+
+        private void customerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.customerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.customerInformationDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'customerInformationDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.customerInformationDataSet.Customer);
+
+        }
+
+        private void LoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

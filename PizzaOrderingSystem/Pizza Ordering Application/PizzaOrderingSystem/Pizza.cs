@@ -103,7 +103,7 @@ namespace PizzaOrderingSystem {
 		}
 
 		/// <summary>
-		/// Checks if this pizza has an ingredient of the same name as the parameter.
+		/// Checks if this pizza has an ingredient of the same name as the parameter. 
 		/// </summary>
 		/// <param name="ingredient"></param>
 		/// <returns></returns>
